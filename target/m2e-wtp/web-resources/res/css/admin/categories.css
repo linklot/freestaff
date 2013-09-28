@@ -1,0 +1,6 @@
+@import url(admin_global.css);
+
+.row {
+    height: 25px;
+    line-height: 25px;
+}

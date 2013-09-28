@@ -1,0 +1,175 @@
+@import url(employer_global.css);
+
+#avatar_wrapper {
+    float: left;
+    width: 200px;
+    height: 220px;
+    text-align: center;
+}
+
+#avatar_wrapper span {
+    height: 20px;
+    line-height: 20px;
+}
+
+#avatar_wrapper .cv_wrapper {
+    height: 22px;
+    line-height: 22px;
+}
+
+#classif_wrapper {
+    float: left;
+    margin-left: 10px;
+}
+
+.row {
+    clear: left;
+}
+
+.key, .value {
+    float: left;
+    height: 25px;
+    line-height: 25px;
+}
+
+.key {
+    font-weight: bold;
+}
+
+#classif_wrapper {
+    float: left;
+}
+
+#classif_wrapper .key {
+    width: 220px;
+}
+
+#ielts_wrapper {
+    margin-top: 30px;
+    float: left;
+}
+
+#ielts_wrapper .value {
+    margin-left: 15px;
+}
+
+#skills_wrapper {
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+#skills_wrapper .value {
+    margin-left: 15px;
+}
+
+#assess_wrapper {
+    margin-top: 30px;
+    width: 350px;
+    float: left;
+}
+
+#assess_wrapper .key {
+    width: 180px;
+}
+
+#pitch_wrapper {
+    float: left;;
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 455px;
+}
+
+#pitch_wrapper h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#pitch_wrapper p {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+#empHistory_wrapper {
+    margin-top: 30px;
+}
+
+#empHistory_wrapper h6{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#empHistory_wrapper p {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+#empHistory_wrapper .work {
+    clear: left;
+}
+
+#empHistory_wrapper .work .left, #empHistory_wrapper .work .right {
+    float: left;
+}
+
+#empHistory_wrapper .work .right {
+    margin-left: 10px;
+    width: 555px;
+}
+
+#empHistory_wrapper .work .left {
+    width: 250px;
+}
+
+#empHistory_wrapper .work .left .row {
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+#empHistory_wrapper .work .left .indent {
+    text-indent: 10px;
+    font-weight: normal;
+}
+
+#empHistory_wrapper .work .right p {
+    height: 140px;
+    overflow: auto;
+}
+
+.separator {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: #aaa;
+}
+
+#edu_wrapper {
+    margin-top: 30px;
+}
+
+#interests_wrapper {
+    margin-top: 30px;
+}
+
+#interests_wrapper h2 {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+#interests_wrapper p {
+    height: 120px;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}

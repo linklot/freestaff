@@ -1,0 +1,22 @@
+@import url(admin_global.css);
+
+.pic {
+    float: left;
+    width: 255px;
+    height: 175px;
+}
+
+.pic .url {
+    height: 20px;
+}
+
+.pic .url input {
+    width: 210px;
+    font-size: 12px;
+    height: 15px;
+}
+
+label {
+    font-size: 12px;
+    color: #ff0000;
+}

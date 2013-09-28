@@ -1,0 +1,88 @@
+@import url(/res/css/global.css);
+@import url(/res/css/template_default.css);
+
+#top_bar {
+    height: 22px;
+    line-height: 22px;
+    background: #2c2c2c;
+}
+
+#top_bar .greeting {
+    float: right;
+    text-align: right;
+    margin-right: 0px;
+    color: #CCC;
+}
+
+#top_bar .signout {
+    float: right;
+    width: 100px;
+    margin-right: 0px;
+    text-align: right;
+}
+
+#top_bar .signout a:link, #top_bar .signout a:visited, #top_bar .signout a:hover, #top_bar .signout a:active {
+    color: #50a6b7;
+}
+
+#pad {
+    margin-top: 20px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 15px;
+}
+
+#photo_wrapper {
+    width: 200px;
+    float: left;
+}
+
+#photo_wrapper .title {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#upload_wrapper {
+    width: 648px;
+    margin-left: 40px;
+    float: left;
+}
+
+#upload_wrapper .title {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+#upload_wrapper .upload {
+    height: 50px;
+    line-height: 50px;
+}
+
+#backward {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 240px;
+}
+
+#upload_wrapper .upload input[type="submit"] {
+    outline: 1px solid #999;
+    background-color: #eee;
+    width: 80px;
+    height: 25px;
+    line-height: 15px;
+}
+
+#upload_wrapper .upload input[type="submit"]:hover {
+    background-color: #3691A6;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+}
+
+#msgLbl {
+    color: #ff0000;
+    margin-left: 10px;
+}

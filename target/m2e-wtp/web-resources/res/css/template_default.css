@@ -1,0 +1,46 @@
+.wrapper {
+    width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+header #logo {
+    display:block;
+    height:85px;
+    float: left;
+}
+
+#search {float:right;}
+#search .bg {background:url(/res/image/search.gif) no-repeat;width:193px;height:36px}
+#search .submit {float:right; height:36px;width:40px;background:none;cursor:pointer}
+#search .input {float:right; background:none;font:14px Arial,Helvetica,sans-serif;color:#323232;height:32px;width:143px;}
+
+nav {
+    width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav #menu {
+    padding: 0px;
+}
+
+#menu li {
+    float:left;
+}
+
+#menu a {display:block;font-size:18px;font-weight:400;color:#000;background:url(/res/image/menu.gif) top repeat-x;line-height:55px;text-decoration:none}
+#menu li span {display:block;background:url(/res/image/menu_left.gif) top left no-repeat}
+#menu .alpha span {background:url(/res/image/left_menu.gif) top left no-repeat}
+#menu .alpha a:hover span,#menu .alpha#menu_active a span {background:url(/res/image/left_menu_active.gif) top left no-repeat}
+#menu .omega span span {background:url(/res/image/right_menu.gif) top right no-repeat}
+#menu .omega a:hover span span,#menu .omega#menu_active a span span {background:url(/res/image/right_menu_active.gif) top right no-repeat}
+#menu li span span,#menu .alpha span span {background:url(/res/image/menu_right.gif) top right no-repeat;width: 184px;text-align: center;}
+#menu a:hover,#menu #menu_active a {color:#fff;background:url(/res/image/menu_active.gif) top repeat-x}
+#menu a:hover span,#menu #menu_active a span {background:url(/res/image/menu_left_active.gif) top left no-repeat}
+#menu a:hover span span,#menu #menu_active a span span,#menu .alpha#menu_active a span span,#menu .alpha a:hover span span {background:url(/res/image/menu_right_active.gif) top right no-repeat}
+
+footer {padding:25px 0 28px 0;width:100%;overflow:hidden;text-align:center;line-height:18px}
+footer a {}
+footer a:hover {}

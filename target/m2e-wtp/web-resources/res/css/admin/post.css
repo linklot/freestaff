@@ -1,0 +1,56 @@
+@import url(admin_global.css);
+
+.row {
+    clear: left;
+}
+
+.row .key, .row .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.row .key {
+    width: 100px;
+    font-weight: bold;
+}
+
+.row .value #name {
+    width: 200px;
+}
+
+.row .value #order {
+    width: 30px;
+    text-align: center;
+}
+
+.row .value label {
+    margin-left: 10px;
+    color: #ff0000;
+}
+
+.row .summary {
+    height: 100px;
+}
+
+.row .txtarea {
+    height: 550px;
+}
+
+#title {
+    width: 490px;
+}
+
+#summary {
+    height: 90px;
+    width: 705px;
+}
+
+#sequence {
+    width: 20px;
+    text-align: center;
+}
+
+.row .pic {
+    height: 80px;
+}

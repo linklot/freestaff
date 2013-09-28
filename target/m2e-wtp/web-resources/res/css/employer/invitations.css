@@ -1,0 +1,129 @@
+@import url(employer_global.css);
+
+.invi {
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.invi .avatar {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
+}
+
+.invi .cand {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.invi .cand .row {
+    clear: left;
+}
+
+.invi .cand .row .key, .invi .cand .row .value {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+}
+
+.invi .cand .row .key {
+    width: 130px;
+    font-weight: bold;
+}
+
+.invi .cand .stats_row {
+    margin-top: 50px;
+}
+
+.invi .cand .stats_row .key {
+    width: 130px;
+    float: left;
+    font-weight: bold;
+}
+
+.invi .cand .stats_row .value {
+    float: left;
+}
+
+.invi .cand .op_row {
+    clear: left;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.withdraw {
+    background: #eee;
+    border: 1px solid #A8A9A8;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    height: 24px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #666;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.resend {
+    background: url(/res/image/template/btn_submit_2.png) repeat-x;
+    border: 1px solid #A8A9A8;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    height: 24px;
+    line-height: 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #333;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.close {
+    background: #FFCC99;
+    border: 1px solid #A8A9A8;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    height: 24px;
+    line-height: 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #333;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+}
+
+.btn_cand {
+    background: #99FF00;
+    border: 1px solid #A8A9A8;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    height: 24px;
+    line-height: 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #333;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+    margin-left: 20px;
+}

@@ -1,0 +1,33 @@
+@import url(admin_global.css);
+
+.key, .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.key {
+    font-weight: bold;
+    width: 100px;
+}
+
+.value {
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+}
+
+.txtArea {
+    height: 100px;
+}
+
+.lbl {
+    color: #ff0000;
+    margin-left: 10px;
+}

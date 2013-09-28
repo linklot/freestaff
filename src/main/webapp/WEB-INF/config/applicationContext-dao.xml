@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    <bean id="iUserDao"
+        class="com.iceroom.fundamental.dao.impl.UserDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iRoleDao"
+        class="com.iceroom.fundamental.dao.impl.RoleDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iCandidateDao"
+        class="com.iceroom.fundamental.dao.impl.CandidateDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iClassifDao"
+        class="com.iceroom.fundamental.dao.impl.ClassifDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iEduHistoryDao"
+        class="com.iceroom.fundamental.dao.impl.EduHistoryDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iEmpHistoryDao"
+        class="com.iceroom.fundamental.dao.impl.EmpHistoryDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iEmployerDao"
+        class="com.iceroom.fundamental.dao.impl.EmployerDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iInvitationDao"
+        class="com.iceroom.fundamental.dao.impl.InvitationDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iCategoryDao"
+        class="com.iceroom.fundamental.dao.impl.CategoryDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iPostDao"
+        class="com.iceroom.fundamental.dao.impl.PostDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iPaymentHistoryDao"
+        class="com.iceroom.fundamental.dao.impl.PaymentHistoryDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+</beans>

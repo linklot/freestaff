@@ -1,0 +1,33 @@
+@import url(employer_global.css);
+
+.module_content .row input[type=text] {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    height: 20px;
+    width: 400px;
+    color: #666;
+    -webkit-box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
+    -moz-box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
+    box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
+    text-indent: 5px;
+    background-position: 10px 6px;
+}
+.module_content .subrow {
+    margin-top: 20px;
+}
+
+.module_content .row select {
+    border: 1px solid #bbb;
+    height: 20px;
+    color: #666;
+    background-position: 10px 6px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.module_content .row label {
+    font-weight: bold;
+    width: 200px;
+}

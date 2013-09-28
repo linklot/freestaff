@@ -1,0 +1,32 @@
+@import url(admin_global.css);
+
+.module_content .row {
+    clear: left;
+}
+
+.module_content .row .key {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 120px;
+}
+
+.module_content .row .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.module_content .row .txtArea {
+    height: 200px;
+}
+
+input[type="text"] {
+    width: 450px;
+    font-size: 13px;
+}
+
+textarea {
+    height: 190px;
+    width: 680px;
+}

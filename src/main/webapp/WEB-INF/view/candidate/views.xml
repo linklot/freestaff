@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+    
+<tiles-definitions>
+    
+    <definition name="candidate_template"  template="/WEB-INF/view/candidate/template.jsp"/>
+    
+    <definition name="candidateIndex" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/index.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/index.css"/>
+    </definition>
+    
+    <definition name="editAvatar" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editAvatar.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editAvatar.css"/>
+    </definition>
+    
+    <definition name="editClassif" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editClassif.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editClassif.css"/>
+    </definition>
+    
+    <definition name="editIelts" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editIelts.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editIelts.css"/>
+    </definition>
+    
+    <definition name="editKeySkills" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editKeySkills.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editKeySkills.css"/>
+    </definition>
+    
+    <definition name="editSkillAssess" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editSkillAssess.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editSkillAssess.css"/>
+    </definition>
+    
+    <definition name="editPitch" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/editPitch.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/editPitch.css"/>
+    </definition>
+    
+    <definition name="empHistory" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/empHistory.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/empHistory.css"/>
+    </definition>
+    
+    <definition name="eduHistory" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/eduHistory.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/eduHistory.css"/>
+    </definition>
+    
+    <definition name="interests" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/interests.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/interests.css"/>
+    </definition>
+    
+    <definition name="pwd" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/pwd.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/pwd.css"/>
+    </definition>
+    
+    <definition name="cv" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/cv.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/cv.css"/>
+    </definition>
+    
+    <definition name="cand_invi" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/invitations.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/invitations.css"/>
+    </definition>
+    
+    <definition name="employerProfile" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/employerProfile.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/employerProfile.css"/>
+    </definition>
+    
+    <definition name="membership" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/member.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/member.css"/>
+    </definition>
+    
+    <definition name="paymentHistory" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/paymentHistory.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/paymentHistory.css"/>
+    </definition>
+    
+</tiles-definitions>

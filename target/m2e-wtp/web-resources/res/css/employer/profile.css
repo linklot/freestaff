@@ -1,0 +1,36 @@
+@import url(employer_global.css);
+
+.key, .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.key {
+    font-weight: bold;
+    width: 80px;
+}
+
+.value {
+}
+
+input[type="text"] {
+    width: 300px;
+    text-indent: 2px;
+    color: #333;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    color: #333;
+}
+
+.txtArea {
+    height: 100px;
+}
+
+.lbl {
+    color: #ff0000;
+    margin-left: 10px;
+}

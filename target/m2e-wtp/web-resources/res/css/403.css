@@ -1,0 +1,20 @@
+@import url(global.css);
+@import url(template_default.css);
+
+#content {
+    background: url(/res/image/bg_cont.gif);
+    width: 700px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #ccc;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;box-shadow:1px 1px 2px #cfcfcf;-moz-box-shadow:1px 1px 2px #cfcfcf;-webkit-box-shadow:1px 1px 2px #cfcfcf;behavior:url(js/PIE.htc);
+    font-size: 14px;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+#content p {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0;
+}

@@ -1,0 +1,134 @@
+@import url(/res/css/global.css);
+@import url(/res/css/template_default.css);
+
+#top_bar {
+    height: 22px;
+    line-height: 22px;
+    background: #2c2c2c;
+}
+
+#top_bar .greeting {
+    float: right;
+    text-align: right;
+    margin-right: 0px;
+    color: #CCC;
+}
+
+#top_bar .signout {
+    float: right;
+    width: 100px;
+    margin-right: 0px;
+    text-align: right;
+}
+
+#top_bar .signout a:link, #top_bar .signout a:visited, #top_bar .signout a:hover, #top_bar .signout a:active {
+    color: #50a6b7;
+}
+
+#pad {
+    margin-top: 20px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 15px;
+}
+
+#pad h2 {
+    margin: 0;
+    font-size: 20px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .backward {
+    float: left;
+    margin-left: 80px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .invi {
+    margin-top: 20px;
+    border: 1px solid #999;
+    padding: 5px;
+}
+
+#pad .invi .key, #pad .invi .value {
+    float: left;
+    height: 25px;
+    line-height: 25px;
+}
+
+#pad .invi .key {
+    width: 120px;
+    font-weight: bold;
+}
+
+#pad .invi .separator {
+    height: 1px;
+    background-color: #999;
+}
+
+#pad .invi .opt_bar {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type=button] {
+    height: 25px;
+    line-height: 16px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+}
+
+#btn_accept {
+    margin-right: 80px;
+}
+
+.s1, .s2, .s3, .s4, .s5, .s6 {
+    text-indent: 20px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.s2 {
+    background: url(/res/image/question.png) no-repeat;
+}
+
+.s3 {
+    background: url(/res/image/cross-red.png) no-repeat;
+}
+
+.s4 {
+    background: url(/res/image/tick-green.png) no-repeat;
+}
+
+.s5 {
+    background: url(/res/image/hand-shake.png) no-repeat;
+}
+
+#btn_accept {
+    float: left;
+}
+
+#btn_decline {
+    float: right;
+}
+
+#btn_employer {
+    margin-top: 5px;
+    background-color: #66ccff;
+    margin-bottom: 5px;
+    margin-left: 120px;
+}
+
+#btn_employer:hover {
+    background-color: #3366cc;
+}

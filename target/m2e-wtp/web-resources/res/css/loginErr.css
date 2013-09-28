@@ -1,0 +1,29 @@
+@import url(global.css);
+@import url(template_default.css);
+
+#content {
+    background: url(/res/image/bg_cont.gif);
+    width: 700px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #ccc;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;box-shadow:1px 1px 2px #cfcfcf;-moz-box-shadow:1px 1px 2px #cfcfcf;-webkit-box-shadow:1px 1px 2px #cfcfcf;behavior:url(js/PIE.htc);
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#content #title {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3691A6;
+    margin-bottom: 20px;
+}
+
+#content #note {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}

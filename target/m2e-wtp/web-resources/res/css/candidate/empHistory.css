@@ -1,0 +1,114 @@
+@import url(/res/css/global.css);
+@import url(/res/css/template_default.css);
+
+#top_bar {
+    height: 22px;
+    line-height: 22px;
+    background: #2c2c2c;
+}
+
+#top_bar .greeting {
+    float: right;
+    text-align: right;
+    margin-right: 0px;
+    color: #CCC;
+}
+
+#top_bar .signout {
+    float: right;
+    width: 100px;
+    margin-right: 0px;
+    text-align: right;
+}
+
+#top_bar .signout a:link, #top_bar .signout a:visited, #top_bar .signout a:hover, #top_bar .signout a:active {
+    color: #50a6b7;
+}
+
+#pad {
+    margin-top: 20px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 15px;
+}
+
+#pad h2 {
+    margin: 0;
+    font-size: 20px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .backward {
+    float: left;
+    margin-left: 80px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .key, #pad .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .longtxt {
+    float: left;
+}
+
+#pad .key {
+    width: 180px;
+    text-indent: 10px;
+    font-weight: bold;
+}
+
+#pad .opt_bar {
+    height: 40px;
+    line-height: 40px;
+    margin-left: 180px;
+}
+
+#pad .separator {
+    height: 1px;
+    background-color: #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#pad input {
+    border: 1px solid #333;
+}
+
+#pad input[type="text"] {
+    width: 300px;
+    text-indent: 2px;
+}
+
+#pad input[type="submit"] {
+    background-color: #3691A6;
+    color: #fff;
+    width: 70px;
+    height: 25px;
+    line-height: 15px;
+    font-weight: bold;
+}
+
+#pad input[type="submit"]:hover {
+    background-color: #336699;
+    cursor: pointer;
+}
+
+#pad .row .value label{
+    margin-right: 5px;
+}
+
+#pad .row .value .date {
+    width: 80px;
+}
+
+#pad .row .longtxt textarea {
+    width: 600px;
+    height: 100px;
+    border: 1px solid #333;
+}

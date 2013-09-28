@@ -1,0 +1,29 @@
+@import url(admin_global.css);
+
+.row {
+    clear: left;
+}
+
+.row .key, .row .value {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.row .key {
+    width: 120px;
+}
+
+.row .value #name {
+    width: 200px;
+}
+
+.row .value #order {
+    width: 30px;
+    text-align: center;
+}
+
+.row .value label {
+    margin-left: 10px;
+    color: #ff0000;
+}

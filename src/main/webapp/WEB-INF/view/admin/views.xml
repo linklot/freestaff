@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+    
+<tiles-definitions>
+    
+    <definition name="admin_template"  template="/WEB-INF/view/admin/template.jsp"/>
+    
+    <definition name="adminIndex" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/index.jsp" />
+        <put-attribute name="css" value="/res/css/admin/index.css"/>
+        <put-attribute name="currLoc" value="Dashboard"/>
+    </definition>
+    
+    <definition name="newEmployer" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/newEmployer.jsp" />
+        <put-attribute name="css" value="/res/css/admin/newEmployer.css"/>
+        <put-attribute name="currLoc" value="Add Employer"/>
+    </definition>
+    
+    <definition name="password" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/pwd.jsp" />
+        <put-attribute name="css" value="/res/css/admin/pwd.css"/>
+        <put-attribute name="currLoc" value="Change Password"/>
+    </definition>
+    
+    <definition name="employers" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/employers.jsp" />
+        <put-attribute name="css" value="/res/css/admin/employers.css"/>
+        <put-attribute name="currLoc" value="Employer List"/>
+    </definition>
+    
+    <definition name="employer" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/employer.jsp" />
+        <put-attribute name="css" value="/res/css/admin/employer.css"/>
+        <put-attribute name="currLoc" value="Employer Profile"/>
+    </definition>
+    
+    <definition name="candidates" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/candidates.jsp" />
+        <put-attribute name="css" value="/res/css/admin/candidates.css"/>
+        <put-attribute name="currLoc" value="Employer List"/>
+    </definition>
+    
+    <definition name="add_category" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/category.jsp" />
+        <put-attribute name="css" value="/res/css/admin/category.css"/>
+        <put-attribute name="currLoc" value="Add Category"/>
+    </definition>
+    
+    <definition name="list_categories" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/categories.jsp" />
+        <put-attribute name="css" value="/res/css/admin/categories.css"/>
+        <put-attribute name="currLoc" value="List Categories"/>
+    </definition>
+    
+    <definition name="add_post" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/post.jsp" />
+        <put-attribute name="css" value="/res/css/admin/post.css"/>
+        <put-attribute name="currLoc" value="Add Post"/>
+    </definition>
+    
+    <definition name="admin_list_posts" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/posts.jsp" />
+        <put-attribute name="css" value="/res/css/admin/posts.css"/>
+        <put-attribute name="currLoc" value="List Posts"/>
+    </definition>
+    
+    <definition name="admin_postPics" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/postPics.jsp" />
+        <put-attribute name="css" value="/res/css/admin/postPics.css"/>
+        <put-attribute name="currLoc" value="Picture Management"/>
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+    
+<tiles-definitions>
+    
+    <definition name="template"  template="/WEB-INF/view/template_default.jsp"/>
+    
+    <definition name="index" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/index.jsp" />
+        <put-attribute name="css" value="/res/css/index.css"/>
+    </definition>
+    
+    <definition name="login" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/login.jsp" />
+        <put-attribute name="css" value="/res/css/login.css"/>
+    </definition>
+    
+    <definition name="reg" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/reg.jsp" />
+        <put-attribute name="css" value="/res/css/reg.css"/>
+    </definition>
+    
+    <definition name="regConfirm" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/reg_confirm.jsp" />
+        <put-attribute name="css" value="/res/css/reg_confirm.css"/>
+    </definition>
+    
+    <definition name="about" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/about.jsp" />
+        <put-attribute name="css" value="/res/css/about.css"/>
+    </definition>
+    
+    <definition name="error404" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/error404.jsp" />
+        <put-attribute name="css" value="/res/css/404.css"/>
+    </definition>
+    
+    <definition name="error403" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/error403.jsp" />
+        <put-attribute name="css" value="/res/css/403.css"/>
+    </definition>
+    
+    <definition name="error500" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/error500.jsp" />
+        <put-attribute name="css" value="/res/css/500.css"/>
+    </definition>
+    
+    <definition name="loginErr" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/loginErr.jsp" />
+        <put-attribute name="css" value="/res/css/loginErr.css"/>
+    </definition>
+    
+</tiles-definitions>

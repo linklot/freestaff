@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+    
+<tiles-definitions>
+    
+    <definition name="employer_template"  template="/WEB-INF/view/employer/template.jsp"/>
+    
+    <definition name="employerIndex" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/index.jsp" />
+        <put-attribute name="css" value="/res/css/employer/index.css"/>
+        <put-attribute name="currLoc" value="Dashboard"/>
+    </definition>
+    
+    <definition name="empProfile" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/profile.jsp" />
+        <put-attribute name="css" value="/res/css/employer/profile.css"/>
+        <put-attribute name="currLoc" value="Edit Profile"/>
+    </definition>
+    
+    <definition name="empSearch" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/search.jsp" />
+        <put-attribute name="css" value="/res/css/employer/search.css"/>
+        <put-attribute name="currLoc" value="Candidate Search"/>
+    </definition>
+    
+    <definition name="searchResult" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/searchResult.jsp" />
+        <put-attribute name="css" value="/res/css/employer/searchResult.css"/>
+        <put-attribute name="currLoc" value="Search Result"/>
+    </definition>
+    
+    <definition name="emp_pwd" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/pwd.jsp" />
+        <put-attribute name="css" value="/res/css/employer/pwd.css"/>
+        <put-attribute name="currLoc" value="Change Password"/>
+    </definition>
+    
+    <definition name="candidate" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/candidate.jsp" />
+        <put-attribute name="css" value="/res/css/employer/candidate.css"/>
+        <put-attribute name="currLoc" value="Candidate Details"/>
+    </definition>
+    
+    <definition name="emp_invitations" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/invitations.jsp" />
+        <put-attribute name="css" value="/res/css/employer/invitations.css"/>
+        <put-attribute name="currLoc" value="Invitations"/>
+    </definition>
+    
+</tiles-definitions>

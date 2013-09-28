@@ -1,0 +1,46 @@
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    margin: 0px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    background: url(/res/image/bg_top.gif);
+}
+
+* {border:none;}
+
+.clearFloat {
+    clear: both;
+}
+
+ol,ul {
+    list-style:none;
+}
+
+a:link {
+    text-decoration: none;
+    color: #3691A6;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3691A6;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #3691A6;
+}
+
+a:active {
+    text-decoration: none;
+    color: #3691A6;
+}
+
+input {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}

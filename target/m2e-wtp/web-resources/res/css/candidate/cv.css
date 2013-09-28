@@ -1,0 +1,96 @@
+@import url(/res/css/global.css);
+@import url(/res/css/template_default.css);
+
+#top_bar {
+    height: 22px;
+    line-height: 22px;
+    background: #2c2c2c;
+}
+
+#top_bar .greeting {
+    float: right;
+    text-align: right;
+    margin-right: 0px;
+    color: #CCC;
+}
+
+#top_bar .signout {
+    float: right;
+    width: 100px;
+    margin-right: 0px;
+    text-align: right;
+}
+
+#top_bar .signout a:link, #top_bar .signout a:visited, #top_bar .signout a:hover, #top_bar .signout a:active {
+    color: #50a6b7;
+}
+
+#pad {
+    margin-top: 20px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 15px;
+}
+
+#pad h2 {
+    margin: 0;
+    font-size: 20px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .backward {
+    float: left;
+    margin-left: 80px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pad .key, #pad .value {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+
+#pad .key {
+    font-weight: bold;
+}
+
+#pad .value {
+    margin-left: 20px;
+}
+
+#pad .opt_bar {
+    line-height: 20px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#pad input[type="file"] {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#pad input[type="submit"] {
+    background-color: #3691A6;
+    color: #fff;
+    width: 70px;
+    height: 25px;
+    line-height: 15px;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+#pad input[type="submit"]:hover {
+    background-color: #336699;
+    cursor: pointer;
+}
+
+#pad .opt_bar label {
+    color: #ff0000;
+}
+
+#pad #lbl_b {
+    margin-left: 10px;
+}

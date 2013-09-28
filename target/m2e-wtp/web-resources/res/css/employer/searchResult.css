@@ -1,0 +1,6 @@
+@import url(employer_global.css);
+
+.row_cand:hover {
+    cursor: pointer;
+    background-color: #EEE;
+}
