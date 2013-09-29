@@ -3,7 +3,7 @@ FreeStaff
 What is it?
 -----------------
 
-FreeStaff is an web-based job-seeking application which allows candidates to sign on, fill in profiles, and upload CV. Employers then search candidates they want and send invitations to those guys.
+FreeStaff is a web-based job-seeking application which allows candidates to sign on, fill in profiles, and upload CV. Employers then search candidates they want and send invitations to those guys.
 
 Technologies / frameworks using:
 -------------------------------------
