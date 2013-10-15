@@ -1,12 +1,10 @@
 package com.iceroom.fundamental.controller;
 
 import java.util.Map;
-import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +22,9 @@ import com.iceroom.fundamental.service.IPaymentService;
 @RequestMapping("/")
 public class PayPalController {
     
-    private static final Logger logger = Logger.getLogger(IndexController.class);
+//    private static final Logger logger = Logger.getLogger(IndexController.class);
     private final String PAYPAL_IP = "173.0.81";
-    private final String RECEIVER_EMAIL = "linklot@gmail.com";// The receiver's email.
+    private final String RECEIVER_EMAIL = "cheraine@freestaff.com.au";// The receiver's email.
     
     @Resource(name="iPaymentService")
     private IPaymentService paymentService;

@@ -18,6 +18,16 @@
         <put-attribute name="css" value="/res/css/login.css"/>
     </definition>
     
+    <definition name="adminLogin" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/adminLogin.jsp" />
+        <put-attribute name="css" value="/res/css/adminLogin.css"/>
+    </definition>
+    
+    <definition name="employerLogin" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/employerLogin.jsp" />
+        <put-attribute name="css" value="/res/css/employerLogin.css"/>
+    </definition>
+    
     <definition name="reg" extends="template">
         <put-attribute name="content" value="/WEB-INF/view/reg.jsp" />
         <put-attribute name="css" value="/res/css/reg.css"/>
@@ -31,6 +41,11 @@
     <definition name="about" extends="template">
         <put-attribute name="content" value="/WEB-INF/view/about.jsp" />
         <put-attribute name="css" value="/res/css/about.css"/>
+    </definition>
+    
+    <definition name="post" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/post.jsp" />
+        <put-attribute name="css" value="/res/css/post.css"/>
     </definition>
     
     <definition name="error404" extends="template">
@@ -51,6 +66,11 @@
     <definition name="loginErr" extends="template">
         <put-attribute name="content" value="/WEB-INF/view/loginErr.jsp" />
         <put-attribute name="css" value="/res/css/loginErr.css"/>
+    </definition>
+    
+    <definition name="credit" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/credit.jsp" />
+        <put-attribute name="css" value="/res/css/credit.css"/>
     </definition>
     
 </tiles-definitions>

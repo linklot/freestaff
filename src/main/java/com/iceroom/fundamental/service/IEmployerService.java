@@ -92,5 +92,17 @@ public interface IEmployerService {
      * @return {@link File}
      */
     File getCandCV(long cand_id);
+    
+    /**
+     * Get the count of all candidates.
+     * @return int
+     */
+    int getCandidateCount();
+    
+    /**
+     * Get the count of all invitations sent by the employer.
+     * @return int
+     */
+    int getInvitationCount(long employerId);
 
 }

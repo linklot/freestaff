@@ -180,7 +180,7 @@
             </div>
             <div id="info5_wrapper">
                 <h2>Video Interview</h2>
-                <div class="video">video</div>
+                <div class="video"></div>
             </div>
             <div class="clearFloat"></div>
         </div>

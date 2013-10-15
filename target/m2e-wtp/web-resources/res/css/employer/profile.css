@@ -2,7 +2,7 @@
 
 .key, .value {
     float: left;
-    height: 30px;
+    height: 40px;
     line-height: 30px;
 }
 
@@ -15,14 +15,14 @@
 }
 
 input[type="text"] {
-    width: 300px;
+    width: 600px;
     text-indent: 2px;
     color: #333;
 }
 
 textarea {
-    width: 500px;
-    height: 100px;
+    width: 600px;
+    height: 400px;
     color: #333;
 }
 

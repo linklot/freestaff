@@ -7,7 +7,7 @@ body {
     margin: 0px;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
-    background: url(/res/image/bg_top.gif);
+    background-color: #f4f4f4;
 }
 
 * {border:none;}

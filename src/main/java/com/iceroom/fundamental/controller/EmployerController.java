@@ -49,6 +49,10 @@ public class EmployerController {
     public String showIndex(Model model) {
         User user = accountService.getCurrentUser();
         model.addAttribute("user", user);
+        int candidateCount = employerService.getCandidateCount();
+        model.addAttribute("candidateCount", candidateCount);
+        int invitationCount = employerService.getInvitationCount(user.getEmployer().getId());
+        model.addAttribute("invitationCount", invitationCount);
         return "employerIndex";
     }
     

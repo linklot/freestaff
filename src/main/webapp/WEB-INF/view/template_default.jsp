@@ -23,35 +23,35 @@
             <li class="alpha" id="menu_active">
                 <a href="/">
                     <span>
-                        <span>Home</span>
+                        <span>HOME</span>
                     </span>
                 </a>
             </li>
             <li>
                 <a href="/candidate">
                     <span>
-                        <span>Candidate</span>
+                        <span><div class="double_line">CANDIDATE LOGIN</div></span>
                     </span>
                 </a>
             </li>
             <li>
                 <a href="/employer">
                     <span>
-                        <span>Employer</span>
+                        <span><div class="double_line">EMPLOYER LOGIN</div></span>
                     </span>
                 </a>
             </li>
             <li>
-                <a href="/about">
+                <a href="#">
                     <span>
-                        <span>About</span>
+                        <span>JOBS</span>
                     </span>
                 </a>
             </li>
             <li class="omega">
-                <a href="#">
+                <a href="/about">
                     <span>
-                        <span>Sitemap</span>
+                        <span>ABOUT</span>
                     </span>
                 </a>
             </li>
@@ -67,11 +67,9 @@
 
 <!-- footer -->
 <footer>
-    &copy; COPYRIGHT FreeStaff 2013
-    <a href="http://www.freestaff.com.au/">www.freestaff.com.au</a>
+    FreeStaff &copy; 2013
     <br>
-    3D Models provided by
-    <a href="http://www.templates.com/product/3d-models/" target="_blank" rel="nofollow">www.templates.com</a>
+    <a href="/credit" target="_blank">Credit</a>
 </footer>
 <!-- end of footer -->
 </body>

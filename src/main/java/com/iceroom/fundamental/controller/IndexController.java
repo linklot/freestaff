@@ -51,6 +51,16 @@ public class IndexController {
         return "login";
     }
     
+    @RequestMapping(value="adminLogin", method=RequestMethod.GET)
+    public String showAdminLogin() {
+        return "adminLogin";
+    }
+    
+    @RequestMapping(value="employerLogin", method=RequestMethod.GET)
+    public String showEmployerLogin() {
+        return "employerLogin";
+    }
+    
     @RequestMapping(value="404", method=RequestMethod.GET)
     public String show404() {
         return "error404";
@@ -122,6 +132,29 @@ public class IndexController {
     public String showAbout(Model model) {
         model.addAttribute("post", generalService.getPostAbout());
         return "about";
+    }
+    
+    @RequestMapping(value="/membership", method=RequestMethod.GET)
+    public String showMembership(Model model) {
+        model.addAttribute("post", generalService.getPostMembership());
+        return "post";
+    }
+    
+    @RequestMapping(value="/visaadvice", method=RequestMethod.GET)
+    public String showVisaAdvice(Model model) {
+        model.addAttribute("post", generalService.getPostVisaAdvice());
+        return "post";
+    }
+    
+    @RequestMapping(value="/farmwork", method=RequestMethod.GET)
+    public String showFarmWork(Model model) {
+        model.addAttribute("post", generalService.getPostFarmWork());
+        return "post";
+    }
+    
+    @RequestMapping(value="credit", method=RequestMethod.GET)
+    public String showCredit() {
+        return "credit";
     }
 
     /**

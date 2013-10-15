@@ -30,7 +30,7 @@ nav #menu {
     float:left;
 }
 
-#menu a {display:block;font-size:18px;font-weight:400;color:#000;background:url(/res/image/menu.gif) top repeat-x;line-height:55px;text-decoration:none}
+#menu a {display:block;font-size:16px;font-weight:bold;color:#000;background:url(/res/image/menu.gif) top repeat-x;line-height:55px;text-decoration:none}
 #menu li span {display:block;background:url(/res/image/menu_left.gif) top left no-repeat}
 #menu .alpha span {background:url(/res/image/left_menu.gif) top left no-repeat}
 #menu .alpha a:hover span,#menu .alpha#menu_active a span {background:url(/res/image/left_menu_active.gif) top left no-repeat}
@@ -40,6 +40,17 @@ nav #menu {
 #menu a:hover,#menu #menu_active a {color:#fff;background:url(/res/image/menu_active.gif) top repeat-x}
 #menu a:hover span,#menu #menu_active a span {background:url(/res/image/menu_left_active.gif) top left no-repeat}
 #menu a:hover span span,#menu #menu_active a span span,#menu .alpha#menu_active a span span,#menu .alpha a:hover span span {background:url(/res/image/menu_right_active.gif) top right no-repeat}
+
+#menu li span .double_line {
+    font-size: 14px;
+    line-height: 18px;
+    width: 80px;
+    padding-top: 10px;
+    padding-bottom:7px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 38px;
+}
 
 footer {padding:25px 0 28px 0;width:100%;overflow:hidden;text-align:center;line-height:18px}
 footer a {}

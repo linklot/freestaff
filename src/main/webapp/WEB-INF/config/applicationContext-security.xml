@@ -18,6 +18,36 @@
         <intercept-url pattern="/**" access="permitAll" />
     </http>
     
+<!--    <http pattern="/admin/**" use-expressions="true">
+        <form-login login-page="/adminLogin" authentication-failure-url="/login/err"/>
+        <http-basic />
+        <logout />
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+    </http>
+    
+    <http pattern="/candidate/**" use-expressions="true">
+        <form-login login-page="/login" authentication-failure-url="/login/err"/>
+        <http-basic />
+        <logout />
+        <intercept-url pattern="/candidate/**" access="hasRole('ROLE_CANDIDATE') or hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+    </http>
+    
+    <http pattern="/employer/**" use-expressions="true">
+        <form-login login-page="/employerLogin" authentication-failure-url="/login/err"/>
+        <http-basic />
+        <logout />
+        <intercept-url pattern="/employer/**" access="hasRole('ROLE_EMPLOYER') or hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+    </http>
+    
+    <http pattern="/**" use-expressions="true">
+        <http-basic />
+        <logout />
+        <intercept-url pattern="/**" access="permitAll" />
+    </http>-->
+    
     <authentication-manager>
         <authentication-provider user-service-ref="userDetailsService">
             <password-encoder hash="sha">

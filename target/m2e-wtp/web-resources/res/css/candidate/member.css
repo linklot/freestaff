@@ -65,11 +65,11 @@
 }
 
 .pay_wrapper .op1 {
-    margin-left: 60px;
+    margin-left: 150px;
 }
 
-.pay_wrapper .op2, .pay_wrapper .op3 {
-    margin-left: 80px;
+.pay_wrapper .op2 {
+    margin-left: 150px;
 }
 
 .pay_wrapper .pay_option .header {

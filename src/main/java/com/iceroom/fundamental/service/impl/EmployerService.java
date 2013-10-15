@@ -239,6 +239,26 @@ public class EmployerService implements IEmployerService {
         return file;
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmployerService#getCandidateCount()
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public int getCandidateCount() {
+        String hql = "from Candidate c";
+        return candidateDao.findByHql(hql).size();
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmployerService#getInvitationCount(long)
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public int getInvitationCount(long employerId) {
+        String hql = "from Invitation i where i.employer.id=?1";
+        return invitationDao.findByHql(hql, employerId).size();
+    }
+
     /**
      * @param userDao the userDao to set
      */

@@ -1,1 +1,14 @@
 @import url(employer_global.css);
+
+.module_content .row {
+    clear: left;
+}
+
+.module_content .row .key, .module_content .row .value {
+    height: 30px;
+    float: left;
+}
+
+.module_content .row .key {
+    width: 120px;
+}
