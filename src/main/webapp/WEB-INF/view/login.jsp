@@ -13,12 +13,15 @@
         <div class="row">
             <div class="prompt">password:</div>
             <div class="input_area"><input type='password' name='j_password'/></div>
-            <div class="label"><a href="#">Forget password?</a></div>
+            <div class="label"><a href="/getPWD">Forgot password?</a></div>
             <div class="clearFloat"></div>
         </div>
         <div class="row bottom">
             <div class="input_area"><input type="submit" value="LOG IN"/></div>
-            <div class="label">or <a href="/reg">Join FreeStaff</a> as a candidate</div>
+            <div class="hint">
+                or <a href="/reg">Join FreeStaff as a candidate</a><br/>
+                or <a href="/employerReg">join FreeStaff as an employer</a>
+            </div>
             <div class="clearFloat"></div>
         </div>
         </form>

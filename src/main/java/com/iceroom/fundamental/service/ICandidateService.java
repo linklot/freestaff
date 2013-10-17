@@ -142,5 +142,11 @@ public interface ICandidateService {
      * @return {@link Employer}
      */
     Employer getEmployerByInvitation(long id);
+    
+    /**
+     * Update a candidate's first name, last name and email.
+     * @param user
+     */
+    void updateCandidateNameEmail(User user);
 
 }

@@ -293,6 +293,19 @@ public class CandidateController {
         model.addAttribute("user", user);
         return "paymentHistory";
     }
+    
+    @RequestMapping(value="/nameEmail", method=RequestMethod.GET)
+    public String showNameEmail(Model model) {
+        User user = accountService.getCurrentCandidate();
+        model.addAttribute("user", user);
+        return "candNameEmail";
+    }
+    
+    @RequestMapping(value="/nameEmail", method=RequestMethod.POST)
+    public String updateNameEmail(User user) {
+        candidateService.updateCandidateNameEmail(user);
+        return "redirect:/candidate";
+    }
 
     /**
      * @param accountService the accountService to set

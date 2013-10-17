@@ -32,12 +32,13 @@
 }
 
 #content .bottom {
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
 #content .prompt {
-    margin-left: 120px;
-    width: 80px;
+    margin-left: 100px;
+    width: 140px;
     float: left;
     font-weight: bold;
 }
@@ -57,7 +58,9 @@
 #content input[type="submit"] {
     background-color: #3691A6;
     color: #fff;
-    margin-left: 200px;
+    margin-left: 320px;
+    height: 30px;
+
 }
 
 #content input[type="submit"]:hover {
@@ -65,20 +68,18 @@
     cursor: pointer;
 }
 
-#content .label {
-    float: left;
-    margin-left: 15px;
-    font-size: 13px;
+#content .text_span {
+    margin-left: 120px;
 }
 
 #content .hint {
-    float: left;
-    margin-left: 15px;
-    font-size: 13px;
-    line-height: 16px;
-    padding-top: 2px;
+    line-height: 18px;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: #777;
 }
 
-#content .text_span {
-    margin-left: 120px;
+#content label {
+    color: #ff0000;
 }

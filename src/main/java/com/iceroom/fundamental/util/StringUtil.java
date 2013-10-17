@@ -5,6 +5,7 @@ package com.iceroom.fundamental.util;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.UUID;
 
 /**
  * @author Lincoln
@@ -99,6 +100,16 @@ public class StringUtil {
         else sb.append("" + second);
         
         return sb.toString();
+    }
+    
+    /**
+     * Generate a random string.
+     * @return {@link String}
+     */
+    public static String randomString() {
+        String uuid = UUID.randomUUID().toString();
+        String[] pieces = uuid.split("-");
+        return pieces[0];
     }
     
 }

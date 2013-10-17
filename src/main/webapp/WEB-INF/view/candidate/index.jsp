@@ -21,7 +21,10 @@
 
             <div id="op_wrapper">
                 <div class="row">
-                    <div class="key"><a href="/candidate/pwd">Change Password</a></div>
+                    <div class="key"><a href="/candidate/nameEmail">Modify Name &amp; Email</a></div>
+                </div>
+                <div class="row">
+                    <div class="key"><a href="/candidate/pwd">Modify Password</a></div>
                 </div>
                 <div class="row">
                     <div class="key"><a href="/candidate/cv">Upload CV</a></div>

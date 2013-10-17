@@ -156,6 +156,20 @@ public class IndexController {
     public String showCredit() {
         return "credit";
     }
+    
+    @RequestMapping(value="getPWD", method=RequestMethod.GET)
+    public String showGetPWD() {
+        return "getPWD";
+    }
+    
+    @RequestMapping(value="retrievePWD", method=RequestMethod.POST)
+    public String retrievePWD(@RequestParam("account") String account,
+            @RequestParam("email") String email, Model model) {
+        boolean result = accountService.retrievePWD(account, email);
+        if(result) model.addAttribute("msg", "success");
+        else model.addAttribute("msg", "fail");
+        return "retrieveResult";
+    }
 
     /**
      * @param accountService the accountService to set

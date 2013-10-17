@@ -355,6 +355,19 @@ public class CandidateService implements ICandidateService {
         return invi.getEmployer();
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.ICandidateService#updateCandidateNameEmail(com.iceroom.fundamental.entity.User)
+     */
+    @Override
+    @Transactional
+    public void updateCandidateNameEmail(User user) {
+        Candidate candidate = candidateDao.getEntityById(user.getCandidate().getId());
+        candidate.setFirstName(user.getCandidate().getFirstName());
+        candidate.setLastName(user.getCandidate().getLastName());
+        candidate.setEmail(user.getCandidate().getEmail());
+        candidateDao.update(candidate);
+    }
+
     /**
      * @param userDao the userDao to set
      */

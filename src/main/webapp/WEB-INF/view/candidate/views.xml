@@ -88,4 +88,9 @@
         <put-attribute name="css" value="/res/css/candidate/paymentHistory.css"/>
     </definition>
     
+    <definition name="candNameEmail" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/nameEmail.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/nameEmail.css"/>
+    </definition>
+    
 </tiles-definitions>

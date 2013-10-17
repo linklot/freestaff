@@ -30,14 +30,14 @@
             <li>
                 <a href="/candidate">
                     <span>
-                        <span><div class="double_line">CANDIDATE LOGIN</div></span>
+                        <span><div class="double_line">CANDIDATE SIGN IN</div></span>
                     </span>
                 </a>
             </li>
             <li>
                 <a href="/employer">
                     <span>
-                        <span><div class="double_line">EMPLOYER LOGIN</div></span>
+                        <span><div class="double_line">EMPLOYER SIGN IN</div></span>
                     </span>
                 </a>
             </li>

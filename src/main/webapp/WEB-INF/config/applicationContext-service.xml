@@ -13,6 +13,7 @@
         p:candidateDao-ref="iCandidateDao"
         p:empHistoryDao-ref="iEmpHistoryDao"
         p:eduHistoryDao-ref="iEduHistoryDao"
+        p:emailService-ref="iEmailService"
     />
     
     <bean id="iCandidateService"

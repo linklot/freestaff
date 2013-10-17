@@ -25,6 +25,8 @@ import com.iceroom.fundamental.entity.Employer;
 import com.iceroom.fundamental.entity.Role;
 import com.iceroom.fundamental.entity.User;
 import com.iceroom.fundamental.service.IAccountService;
+import com.iceroom.fundamental.service.IEmailService;
+import com.iceroom.fundamental.util.StringUtil;
 
 /**
  * @author Lincoln
@@ -38,6 +40,7 @@ public class AccountService implements IAccountService {
     private IEmployerDao employerDao;
     private IEmpHistoryDao empHistoryDao;
     private IEduHistoryDao eduHistoryDao;
+    private IEmailService emailService;
     private String hql;
     private final String FIRST_ACCOUNT = "c10086";// If there is no candidate, use this as the first account.
     private final String ROLE_CANDIDATE_NAME = "ROLE_CANDIDATE";// the role name of candidates.
@@ -52,6 +55,7 @@ public class AccountService implements IAccountService {
             String email, String password) {
         
         long id = 0;
+        String account = "";
         
         /* Step 1, create a new User entity. */
         //      1.1 Query the biggest user account
@@ -64,7 +68,7 @@ public class AccountService implements IAccountService {
             // Get the last registration number
             String last_account = lastUser.getAccount();
             int number = Integer.parseInt(last_account.substring(1));
-            String account = "c" + ++number;
+            account = "c" + ++number;
             id = this.createCandidate(account, password);
         }
         
@@ -141,6 +145,9 @@ public class AccountService implements IAccountService {
             eh.setComplDate("");
             eduHistoryDao.create(eh);
         }
+        
+        /* Step 5, send a welcome email to the emial address */
+        emailService.sendWelcomeEmail(account, email);
         
         return user.getAccount();
     }
@@ -251,6 +258,53 @@ public class AccountService implements IAccountService {
         employerDao.create(emp);
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAccountService#retrievePWD(java.lang.String, java.lang.String)
+     */
+    @Override
+    @Transactional
+    public boolean retrievePWD(String account, String email) {
+        User user = userDao.getUserByAccount(account);
+        if(user == null) return false;// This account does not exist.
+        else {
+            if(user.getCandidate() != null) {
+                // A candidate
+                Candidate candidate = user.getCandidate();
+                if(candidate.getEmail().equals(email)) {
+                    // Email is correct
+                    String newPWD = StringUtil.randomString();
+                    resetPWDSendEmail(user, email, newPWD);
+                    return true;
+                } else return false;// Wrong email.
+            } else if(user.getEmployer() != null) {
+                // An employer
+                Employer employer = user.getEmployer();
+                if(employer.getEmail().equals(email)) {
+                    // Email is correct.
+                    String newPWD = StringUtil.randomString();
+                    resetPWDSendEmail(user, email, newPWD);
+                    return true;
+                } else return false; // Wrong email
+            } else return false;// An error occurs.
+        }
+    }
+    
+    /**
+     * To reset a user's password and send an email notification.
+     * @param User The User instance.
+     * @param email User's email address.
+     * @param newPWD The new password
+     */
+    private void resetPWDSendEmail(User user, String email, String newPWD) {
+        ShaPasswordEncoder encoder = new ShaPasswordEncoder();
+        String password = encoder.encodePassword(newPWD, user.getAccount());
+        user.setPassword(password);
+        userDao.update(user);
+        
+        // Send email
+        emailService.sendResetPasswordEmail(user.getAccount(), email, newPWD);
+    }
+
     /**
      * @param userDao the userDao to set
      */
@@ -291,6 +345,13 @@ public class AccountService implements IAccountService {
      */
     public void setEduHistoryDao(IEduHistoryDao eduHistoryDao) {
         this.eduHistoryDao = eduHistoryDao;
+    }
+
+    /**
+     * @param emailService the emailService to set
+     */
+    public void setEmailService(IEmailService emailService) {
+        this.emailService = emailService;
     }
 
 }

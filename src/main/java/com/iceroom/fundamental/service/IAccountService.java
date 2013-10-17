@@ -45,5 +45,15 @@ public interface IAccountService {
      * @param user The User entity submitted.
      */
     void registerEmployer(User user);
+    
+    /**
+     * When a user forgot login password.<br/>
+     * It first check whether the account and email are valid,
+     * then reset the password to a new value. Lastly it sends an email to the user's email address
+     * @param account
+     * @param email
+     * @return true: success; false: fail
+     */
+    boolean retrievePWD(String account, String email);
 
 }

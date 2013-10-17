@@ -73,4 +73,14 @@
         <put-attribute name="css" value="/res/css/credit.css"/>
     </definition>
     
+    <definition name="getPWD" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/getPWD.jsp" />
+        <put-attribute name="css" value="/res/css/getPWD.css"/>
+    </definition>
+    
+    <definition name="retrieveResult" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/retrieveResult.jsp" />
+        <put-attribute name="css" value="/res/css/retrieveResult.css"/>
+    </definition>
+    
 </tiles-definitions>
