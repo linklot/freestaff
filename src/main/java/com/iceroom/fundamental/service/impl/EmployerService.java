@@ -12,13 +12,16 @@ import org.springframework.transaction.annotation.Transactional;
 import com.iceroom.fundamental.dao.ICandidateDao;
 import com.iceroom.fundamental.dao.IClassifDao;
 import com.iceroom.fundamental.dao.IEmployerDao;
+import com.iceroom.fundamental.dao.IFeedbackDao;
 import com.iceroom.fundamental.dao.IInvitationDao;
 import com.iceroom.fundamental.dao.IUserDao;
 import com.iceroom.fundamental.entity.Candidate;
 import com.iceroom.fundamental.entity.Classif;
 import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.Feedback;
 import com.iceroom.fundamental.entity.Invitation;
 import com.iceroom.fundamental.entity.User;
+import com.iceroom.fundamental.service.IAccountService;
 import com.iceroom.fundamental.service.IEmailService;
 import com.iceroom.fundamental.service.IEmployerService;
 
@@ -35,6 +38,8 @@ public class EmployerService implements IEmployerService {
     private IInvitationDao invitationDao;
     private String cvFilePath;
     private IEmailService emailService;
+    private IAccountService accountService;
+    private IFeedbackDao feedbackDao;
 
     /* (non-Javadoc)
      * @see com.iceroom.fundamental.service.IEmployerService#saveProfile(com.iceroom.fundamental.entity.User)
@@ -259,6 +264,20 @@ public class EmployerService implements IEmployerService {
         return invitationDao.findByHql(hql, employerId).size();
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmployerService#saveFeedback(java.lang.String)
+     */
+    @Override
+    @Transactional
+    public void saveFeedback(String content) {
+        User user = accountService.getCurrentUser();
+        Feedback feedback = new Feedback();
+        feedback.setUser(user);
+        feedback.setContent(content);
+        feedback.setTime(Calendar.getInstance());
+        feedbackDao.create(feedback);
+    }
+
     /**
      * @param userDao the userDao to set
      */
@@ -306,6 +325,20 @@ public class EmployerService implements IEmployerService {
      */
     public void setEmailService(IEmailService emailService) {
         this.emailService = emailService;
+    }
+
+    /**
+     * @param accountService the accountService to set
+     */
+    public void setAccountService(IAccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    /**
+     * @param feedbackDao the feedbackDao to set
+     */
+    public void setFeedbackDao(IFeedbackDao feedbackDao) {
+        this.feedbackDao = feedbackDao;
     }
 
 }

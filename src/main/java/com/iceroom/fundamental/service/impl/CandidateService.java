@@ -4,6 +4,7 @@
 package com.iceroom.fundamental.service.impl;
 
 import java.io.File;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -15,14 +16,17 @@ import com.iceroom.fundamental.dao.ICandidateDao;
 import com.iceroom.fundamental.dao.IClassifDao;
 import com.iceroom.fundamental.dao.IEduHistoryDao;
 import com.iceroom.fundamental.dao.IEmpHistoryDao;
+import com.iceroom.fundamental.dao.IFeedbackDao;
 import com.iceroom.fundamental.dao.IInvitationDao;
 import com.iceroom.fundamental.dao.IUserDao;
 import com.iceroom.fundamental.entity.Candidate;
 import com.iceroom.fundamental.entity.EduHistory;
 import com.iceroom.fundamental.entity.EmpHistory;
 import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.Feedback;
 import com.iceroom.fundamental.entity.Invitation;
 import com.iceroom.fundamental.entity.User;
+import com.iceroom.fundamental.service.IAccountService;
 import com.iceroom.fundamental.service.ICandidateService;
 import com.iceroom.fundamental.util.StringUtil;
 
@@ -40,6 +44,8 @@ public class CandidateService implements ICandidateService {
     private IEmpHistoryDao empHistoryDao;
     private IEduHistoryDao eduHistoryDao;
     private IInvitationDao invitationDao;
+    private IAccountService accountService;
+    private IFeedbackDao feedbackDao;
     private String cvFilePath;
 
     /* (non-Javadoc)
@@ -368,6 +374,32 @@ public class CandidateService implements ICandidateService {
         candidateDao.update(candidate);
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.ICandidateService#updateVideoUrl(java.lang.String)
+     */
+    @Override
+    @Transactional
+    public void updateVideoUrl(String url) {
+        User user = accountService.getCurrentCandidate();
+        Candidate candidate = user.getCandidate();
+        candidate.setVideoUrl(url);
+        candidateDao.update(candidate);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.ICandidateService#saveFeedback(com.iceroom.fundamental.entity.User, java.lang.String)
+     */
+    @Override
+    @Transactional
+    public void saveFeedback(User user, String content) {
+        user = userDao.getEntityById(user.getId());
+        Feedback feedback = new Feedback();
+        feedback.setUser(user);
+        feedback.setContent(content);
+        feedback.setTime(Calendar.getInstance());
+        feedbackDao.create(feedback);
+    }
+
     /**
      * @param userDao the userDao to set
      */
@@ -422,6 +454,20 @@ public class CandidateService implements ICandidateService {
      */
     public void setInvitationDao(IInvitationDao invitationDao) {
         this.invitationDao = invitationDao;
+    }
+
+    /**
+     * @param accountService the accountService to set
+     */
+    public void setAccountService(IAccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    /**
+     * @param feedbackDao the feedbackDao to set
+     */
+    public void setFeedbackDao(IFeedbackDao feedbackDao) {
+        this.feedbackDao = feedbackDao;
     }
 
 }

@@ -182,8 +182,14 @@
                 <p><c:out value="${user.candidate.pitch}"/></p>
             </div>
             <div id="info5_wrapper">
-                <h2>Video Interview</h2>
-                <div class="video"></div>
+                <h2>Video</h2><div class="modify_row"><a href="/candidate/video">Edit</a></div>
+                <div class="clearFloat"></div>
+                <div class="video">
+                    <c:if test="${empty user.candidate.videoUrl}">No video yet.<c:out value="${user.candidate.videoUrl}"/></c:if>
+                    <c:if test="${not empty user.candidate.videoUrl}">
+                        <iframe id="ytplayer" type="text/html" width="205" height="115" src='https://www.youtube.com/embed/<c:out value="${user.candidate.videoUrl}"/>' frameborder="0" allowfullscreen></iframe>
+                    </c:if>
+                </div>
             </div>
             <div class="clearFloat"></div>
         </div>
@@ -266,6 +272,17 @@
         <div id="invi_wrapper" class="invi_wrapper">Check your invitations.</div>
         </c:if>
         <c:if test="${user.candidate.viewCount!='0'}"><div id="viewCount">Profile viewed: <strong><c:out value="${user.candidate.viewCount}"/></strong> time(s)</div></c:if>
+        <div class="sep_bar"></div>
+        <div class="feedback_wrapper">
+            <div class="title"><a href="#" id="feedback">FEEDBACK</a></div>
+            <div class="form_area">
+                <form id="form0" action="/candidate/feedback" method="post">
+                    <textarea id="content" name="content" placeholder="Please give us your feedback"></textarea>
+                    <input type="submit" value="Send" class="btn"/>
+                </form>
+            </div>
+        </div>
+        <div class="return_msg"></div>
     </div>
     <div class="clearFloat"></div>
 </div>

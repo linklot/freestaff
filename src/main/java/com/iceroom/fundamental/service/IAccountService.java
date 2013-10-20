@@ -1,5 +1,7 @@
 package com.iceroom.fundamental.service;
 
+import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.entity.User;
 
 /**
@@ -55,5 +57,26 @@ public interface IAccountService {
      * @return true: success; false: fail
      */
     boolean retrievePWD(String account, String email);
+    
+    /**
+     * Save an employer application.
+     * @param application The EmployerApplication entity.
+     */
+    void saveEmployerApplication(EmployerApplication application);
+    
+    /**
+     * Accept an employer application.
+     * @param employer The Employer object.
+     * @param account The account.
+     * @param password The password.
+     * @param appId The application ID.
+     */
+    void acceptEmpApp(Employer employer, String account, String password, long appId);
+    
+    /**
+     * Refuse an employer application.
+     * @param appId The application ID.
+     */
+    void refuseEmpApp(long appId);
 
 }

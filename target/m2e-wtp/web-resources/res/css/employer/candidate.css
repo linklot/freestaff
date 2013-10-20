@@ -96,7 +96,7 @@
 }
 
 #empHistory_wrapper {
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 #empHistory_wrapper h6{
@@ -172,4 +172,8 @@
     margin: 0;
     padding: 0;
     white-space: pre-wrap;
+}
+
+.module_content .video {
+    margin-top: 5px;
 }

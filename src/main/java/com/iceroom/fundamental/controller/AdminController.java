@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.iceroom.fundamental.entity.Category;
+import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.entity.PaginationWrapper;
 import com.iceroom.fundamental.entity.Post;
 import com.iceroom.fundamental.entity.User;
@@ -194,6 +196,56 @@ public class AdminController {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
+    }
+    
+    @RequestMapping(value="/employerApplications/{startIndex}/{pageSize}", method=RequestMethod.GET)
+    public String listEmpApplications(Model model,
+            @PathVariable Integer startIndex,
+            @PathVariable Integer pageSize) {
+        PaginationWrapper pw = adminService.getAllApplications(startIndex, pageSize);
+        model.addAttribute("pw", pw);
+        return "listEmpApps";
+    }
+    
+    @RequestMapping(value="/employerApplication/{id}", method=RequestMethod.GET)
+    public String showEmpApp(Model model, @PathVariable Long id) {
+        EmployerApplication app = adminService.getApplication(id);
+        model.addAttribute("application", app);
+        Employer employer = new Employer();
+        employer.setName(app.getName());
+        employer.setPhone(app.getPhone());
+        employer.setEmail(app.getEmail());
+        employer.setAddrStreet(app.getAddress());
+        employer.setAddrCity(app.getCity());
+        employer.setAddrState(app.getState());
+        employer.setAddrCountry(app.getCountry());
+        employer.setZip(app.getPostcode());
+        employer.setStatement(app.getStatement());
+        model.addAttribute("employer", employer);
+        return "adminEmpApp";
+    }
+    
+    @RequestMapping(value="/handleEmpApp", method=RequestMethod.POST)
+    public String handleEmpApp(Employer employer, @RequestParam(value="app_id", required=true) Long appId,
+            @RequestParam(value="decision", required=true) String decision,
+            @RequestParam(value="account", required=true) String account,
+            @RequestParam(value="password", required=true) String password) {
+        if(decision.equals("refuse")) {
+            // Refuse an application.
+            accountService.refuseEmpApp(appId);
+        } else {
+            // Accept an application.
+            accountService.acceptEmpApp(employer, account, password, appId);
+        }
+        return "redirect:/admin/employerApplications/0/20";
+    }
+    
+    @RequestMapping(value="/feedbacks/{startIndex}/{pageSize}", method=RequestMethod.GET)
+    public String feedbacks(Model model,
+            @PathVariable int startIndex, @PathVariable int pageSize) {
+        PaginationWrapper pw = adminService.getAllFeedbacks(startIndex, pageSize);
+        model.addAttribute("pw", pw);
+        return "feedbacks";
     }
 
     /**

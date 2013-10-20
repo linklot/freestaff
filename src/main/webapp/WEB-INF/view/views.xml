@@ -83,4 +83,9 @@
         <put-attribute name="css" value="/res/css/retrieveResult.css"/>
     </definition>
     
+    <definition name="employerReg" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/employerReg.jsp" />
+        <put-attribute name="css" value="/res/css/employerReg.css"/>
+    </definition>
+    
 </tiles-definitions>

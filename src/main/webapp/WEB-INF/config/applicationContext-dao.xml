@@ -49,4 +49,12 @@
         class="com.iceroom.fundamental.dao.impl.PaymentHistoryDao"
         p:sessionFactory-ref="sessionFactory"/>
     
+    <bean id="iEmployerApplicationDao"
+        class="com.iceroom.fundamental.dao.impl.EmployerApplicationDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean id="iFeedbackDao"
+        class="com.iceroom.fundamental.dao.impl.FeedbackDao"
+        p:sessionFactory-ref="sessionFactory"/>
+    
 </beans>

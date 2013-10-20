@@ -154,6 +154,11 @@
                 <p><c:out value="${cand.candidate.pitch}"/></p>
             </div>
             <div class="clear"></div>
+            <div class="video">
+                <c:if test="${not empty cand.candidate.videoUrl}">
+                    <iframe id="ytplayer" type="text/html" width="640" height="360" src='https://www.youtube.com/embed/<c:out value="${cand.candidate.videoUrl}"/>' frameborder="0" allowfullscreen></iframe>
+                </c:if>
+            </div>
             <div id="empHistory_wrapper">
                 <h2>Employment History</h2>
                 <c:forEach var="history" items="${cand.candidate.empHistories}" varStatus="status">

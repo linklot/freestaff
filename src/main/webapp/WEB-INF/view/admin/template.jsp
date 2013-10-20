@@ -54,6 +54,9 @@
     </ul>
     <h3>Employers</h3>
     <ul class="toggle">
+        <li class="icn_view_users">
+            <a href="/admin/employerApplications/0/20">List Applications</a>
+        </li>
         <li class="icn_add_user">
             <a href="/admin/newEmployer">Add New Employer</a>
         </li>
@@ -78,6 +81,9 @@
     </ul>
     <h3>Admin</h3>
     <ul class="toggle">
+        <li class="icn_audio">
+            <a href="/admin/feedbacks/0/20">Feedbacks</a>
+        </li>
         <li class="icn_security">
             <a href="/admin/pwd">Change Password</a>
         </li>

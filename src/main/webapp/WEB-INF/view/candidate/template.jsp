@@ -46,23 +46,23 @@
                 </a>
             </li>
             <li>
-                <a href="/employer">
+                <a href="#">
                     <span>
                         <span>Employer</span>
                     </span>
                 </a>
             </li>
             <li>
-                <a href="/about">
+                <a href="#">
                     <span>
-                        <span>About</span>
+                        <span>JOBS</span>
                     </span>
                 </a>
             </li>
             <li class="omega">
-                <a href="/sitemap">
+                <a href="/about">
                     <span>
-                        <span>Sitemap</span>
+                        <span>ABOUT</span>
                     </span>
                 </a>
             </li>

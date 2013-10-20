@@ -1,0 +1,48 @@
+@import url(admin_global.css);
+
+.module_content .row {
+    clear: left;
+}
+
+.module_content .row .key, .module_content .row .val {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+
+.module_content .row .key {
+    width: 70px;
+}
+
+.module_content .row .val {
+    margin-left: 10px;
+}
+
+.module_content .row .val input[type="text"] {
+    text-indent: 4px;
+    width: 400px;
+}
+
+.module_content .row .val textarea {
+    width: 700px;
+    height: 290px;
+}
+
+.module_content .row .statement {
+    height: 300px;
+}
+
+.module_content .row .val input.narrow {
+    width: 100px;
+}
+
+.module_content .sep_line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: #ff9900;
+}
+
+.module_content .row .val label {
+    color: #ff0000;
+}

@@ -1,4 +1,12 @@
+<script type="text/javascript" src="/res/js/jquery.js"></script>
+<script type="text/javascript" src="/res/js/jquery.cycle2.min.js"></script>
 <div class="wrapper">
+    <div class="cycle-slideshow"
+        data-cycle-pause-on-hover="true"
+        data-cycle-speed="3000">
+        <img src="/res/image/bg_img1.jpg">
+        <img src="/res/image/bg_img1.png">
+    </div>
     <div class="text">
         <span class="text1">
             FreeStaff
@@ -6,6 +14,7 @@
         </span>
         <a href="/about" class="button">read more</a>
     </div>
+    <div class="clearFloat"></div>
 </div>
 
 <section id="content">

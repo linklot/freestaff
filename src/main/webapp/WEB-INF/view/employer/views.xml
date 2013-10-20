@@ -50,4 +50,10 @@
         <put-attribute name="currLoc" value="Invitations"/>
     </definition>
     
+    <definition name="empFeedback" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/feedback.jsp" />
+        <put-attribute name="css" value="/res/css/employer/feedback.css"/>
+        <put-attribute name="currLoc" value="Feedback"/>
+    </definition>
+    
 </tiles-definitions>

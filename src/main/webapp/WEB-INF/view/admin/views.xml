@@ -74,4 +74,22 @@
         <put-attribute name="currLoc" value="Picture Management"/>
     </definition>
     
+    <definition name="listEmpApps" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/listEmpApps.jsp" />
+        <put-attribute name="css" value="/res/css/admin/listEmpApps.css"/>
+        <put-attribute name="currLoc" value="Employer Applications"/>
+    </definition>
+    
+    <definition name="adminEmpApp" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/empApp.jsp" />
+        <put-attribute name="css" value="/res/css/admin/empApp.css"/>
+        <put-attribute name="currLoc" value="Employer Application"/>
+    </definition>
+    
+    <definition name="feedbacks" extends="admin_template">
+        <put-attribute name="content" value="/WEB-INF/view/admin/feedbacks.jsp" />
+        <put-attribute name="css" value="/res/css/admin/feedbacks.css"/>
+        <put-attribute name="currLoc" value="Feedbacks"/>
+    </definition>
+    
 </tiles-definitions>

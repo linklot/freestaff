@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.iceroom.fundamental.entity.Category;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.entity.PaginationWrapper;
 import com.iceroom.fundamental.entity.Post;
 import com.iceroom.fundamental.entity.User;
@@ -106,5 +107,28 @@ public interface IAdminService {
      * @throws Exception
      */
     void savePostPic(MultipartFile image) throws Exception;
+    
+    /**
+     * Get all employer applications.
+     * @param startIndex The pagination start index.
+     * @param pageSize The size of a single page.
+     * @return {@link PaginationWrapper}
+     */
+    PaginationWrapper getAllApplications(int startIndex, int pageSize);
+    
+    /**
+     * Get a particular employer application.
+     * @param id The id of EmployerApplication
+     * @return {@link EmployerApplication}
+     */
+    EmployerApplication getApplication(long id);
+    
+    /**
+     * Get all feedbacks in paginal format.
+     * @param startIndex The start index.
+     * @param pageSize The page size.
+     * @return {@link PaginationWrapper}
+     */
+    PaginationWrapper getAllFeedbacks(int startIndex, int pageSize);
     
 }

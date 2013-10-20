@@ -1,0 +1,58 @@
+@import url(admin_global.css);
+
+footer .navi {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+}
+
+.module_content table {
+    border-spacing:0;
+    width: 100%;
+}
+
+.module_content table th, .module_content table td {
+    text-align: left;
+    text-indent: 5px;
+    padding: 0;
+}
+
+.module_content table th {
+    background-color: #888;
+    color: #fff;
+    font-weight: normal;
+    height: 32px;
+    line-height: 32px;
+}
+
+.module_content table td {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.module_content table .row:hover {
+    background-color: #EEE;
+    cursor: pointer;
+}
+
+.navi {
+    height: 30px;
+    line-height: 30px;
+}
+
+.navi .pre, .navi .info, .navi .next {
+    float: left;
+}
+
+.navi .count {
+    float: left;
+}
+
+.module_content .reject {
+    color: #ff0000;
+}
+
+.module_content .accept {
+    color: #00cc33;
+}

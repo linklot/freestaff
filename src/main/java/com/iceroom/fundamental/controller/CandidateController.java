@@ -306,19 +306,25 @@ public class CandidateController {
         candidateService.updateCandidateNameEmail(user);
         return "redirect:/candidate";
     }
-
-    /**
-     * @param accountService the accountService to set
-     */
-    public void setAccountService(IAccountService accountService) {
-        this.accountService = accountService;
+    
+    @RequestMapping(value="/video", method=RequestMethod.GET)
+    public String showModifyVideo(Model model) {
+        User user = accountService.getCurrentCandidate();
+        model.addAttribute("user", user);
+        return "showModifyVideo";
     }
-
-    /**
-     * @param classifService the classifService to set
-     */
-    public void setClassifService(IClassifService classifService) {
-        this.classifService = classifService;
+    
+    @RequestMapping(value="/video", method=RequestMethod.POST)
+    public String modifyVideo(@RequestParam(value="videoUrl") String videoUrl) {
+        candidateService.updateVideoUrl(videoUrl);
+        return "redirect:/candidate";
+    }
+    
+    @RequestMapping(value="/feedback", method=RequestMethod.POST)
+    @ResponseBody
+    public void feedback(@RequestParam(value="content") String content) {
+        User user = accountService.getCurrentCandidate();
+        candidateService.saveFeedback(user, content);
     }
 
 }

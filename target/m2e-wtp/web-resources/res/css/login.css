@@ -46,6 +46,10 @@
     float: left;
 }
 
+#content .input_area label {
+    color: #ff0000;
+}
+
 #content input {
     color: #003333;
     border: 1px solid #999;

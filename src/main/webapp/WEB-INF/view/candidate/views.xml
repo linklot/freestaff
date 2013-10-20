@@ -93,4 +93,9 @@
         <put-attribute name="css" value="/res/css/candidate/nameEmail.css"/>
     </definition>
     
+    <definition name="showModifyVideo" extends="candidate_template">
+        <put-attribute name="content" value="/WEB-INF/view/candidate/modifyVideo.jsp" />
+        <put-attribute name="css" value="/res/css/candidate/modifyVideo.css"/>
+    </definition>
+    
 </tiles-definitions>

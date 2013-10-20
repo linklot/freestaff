@@ -52,6 +52,10 @@ public class User {
     
     @Column(name="REGDATE")
     private Calendar regDate;
+    
+    @OneToMany(mappedBy="user")
+    @OrderBy("id desc")
+    private Set<Feedback> feedbacks;
 
     /**
      * @return the id
@@ -167,6 +171,20 @@ public class User {
     
     public String getFriendlyRegDate() {
         return StringUtil.getFriendlyDate(this.regDate);
+    }
+
+    /**
+     * @return the feedbacks
+     */
+    public Set<Feedback> getFeedbacks() {
+        return feedbacks;
+    }
+
+    /**
+     * @param feedbacks the feedbacks to set
+     */
+    public void setFeedbacks(Set<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
     }
     
 }

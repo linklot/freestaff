@@ -199,5 +199,16 @@ public class EmployerController {
             ex.printStackTrace();
         }
     }
+    
+    @RequestMapping(value="/feedback", method=RequestMethod.GET)
+    public String showFeedback() {
+        return "empFeedback";
+    }
+    
+    @RequestMapping(value="/feedback", method=RequestMethod.POST)
+    @ResponseBody
+    public void feedback(@RequestParam(value="content") String content) {
+        employerService.saveFeedback(content);
+    }
 
 }

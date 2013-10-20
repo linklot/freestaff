@@ -104,5 +104,11 @@ public interface IEmployerService {
      * @return int
      */
     int getInvitationCount(long employerId);
+    
+    /**
+     * Save a Feedback entity.
+     * @param content The content of the feedback.
+     */
+    void saveFeedback(String content);
 
 }

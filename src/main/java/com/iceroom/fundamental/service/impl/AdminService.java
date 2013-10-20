@@ -14,11 +14,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.iceroom.fundamental.dao.ICategoryDao;
+import com.iceroom.fundamental.dao.IEmployerApplicationDao;
 import com.iceroom.fundamental.dao.IEmployerDao;
+import com.iceroom.fundamental.dao.IFeedbackDao;
 import com.iceroom.fundamental.dao.IPostDao;
 import com.iceroom.fundamental.dao.IUserDao;
 import com.iceroom.fundamental.entity.Category;
 import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.entity.PaginationWrapper;
 import com.iceroom.fundamental.entity.Post;
 import com.iceroom.fundamental.entity.User;
@@ -37,6 +40,8 @@ public class AdminService implements IAdminService {
     private IEmployerDao employerDao;
     private ICategoryDao categoryDao;
     private IPostDao postDao;
+    private IEmployerApplicationDao employerApplicationDao;
+    private IFeedbackDao feedbackDao;
     private String miniPicPath;
     private String postPicPath;
     private final String MINIPIC_URL_PATH = "/res/miniPic/";
@@ -256,6 +261,35 @@ public class AdminService implements IAdminService {
         FileUtils.writeByteArrayToFile(file, image.getBytes());
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAdminService#getAllApplications(int, int)
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public PaginationWrapper getAllApplications(int startIndex, int pageSize) {
+        String hql = "from EmployerApplication app order by app.id";
+        return employerApplicationDao.paginatedFind(startIndex, pageSize, hql, true);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAdminService#getApplication(long)
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public EmployerApplication getApplication(long id) {
+        return employerApplicationDao.getEntityById(id);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAdminService#getAllFeedbacks(int, int)
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public PaginationWrapper getAllFeedbacks(int startIndex, int pageSize) {
+        String hql = "from Feedback f order by f.id";
+        return feedbackDao.paginatedFind(startIndex, pageSize, hql, true);
+    }
+
     /**
      * @param userDao the userDao to set
      */
@@ -296,6 +330,21 @@ public class AdminService implements IAdminService {
      */
     public void setPostPicPath(String postPicPath) {
         this.postPicPath = postPicPath;
+    }
+
+    /**
+     * @param employerApplicationDao the employerApplicationDao to set
+     */
+    public void setEmployerApplicationDao(
+            IEmployerApplicationDao employerApplicationDao) {
+        this.employerApplicationDao = employerApplicationDao;
+    }
+
+    /**
+     * @param feedbackDao the feedbackDao to set
+     */
+    public void setFeedbackDao(IFeedbackDao feedbackDao) {
+        this.feedbackDao = feedbackDao;
     }
     
 }

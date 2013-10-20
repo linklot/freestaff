@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.iceroom.fundamental.entity.Classif;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.service.IAccountService;
 import com.iceroom.fundamental.service.IClassifService;
 import com.iceroom.fundamental.service.IEmailService;
@@ -169,6 +170,22 @@ public class IndexController {
         if(result) model.addAttribute("msg", "success");
         else model.addAttribute("msg", "fail");
         return "retrieveResult";
+    }
+    
+    @RequestMapping(value="employerReg", method=RequestMethod.GET)
+    public String showEmployerReg(Model model) {
+        EmployerApplication application = new EmployerApplication();
+        application.setCountry("Australia");
+        model.addAttribute("employerApplication", application);
+        model.addAttribute("msg", "");
+        return "employerReg";
+    }
+    
+    @RequestMapping(value="employerReg", method=RequestMethod.POST)
+    public String employerReg(EmployerApplication app, Model model) {
+        accountService.saveEmployerApplication(app);
+        model.addAttribute("msg", "added");
+        return "employerReg";
     }
 
     /**

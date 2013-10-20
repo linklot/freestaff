@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.iceroom.fundamental.dao.ICandidateDao;
 import com.iceroom.fundamental.dao.IEduHistoryDao;
 import com.iceroom.fundamental.dao.IEmpHistoryDao;
+import com.iceroom.fundamental.dao.IEmployerApplicationDao;
 import com.iceroom.fundamental.dao.IEmployerDao;
 import com.iceroom.fundamental.dao.IRoleDao;
 import com.iceroom.fundamental.dao.IUserDao;
@@ -22,6 +23,7 @@ import com.iceroom.fundamental.entity.Candidate;
 import com.iceroom.fundamental.entity.EduHistory;
 import com.iceroom.fundamental.entity.EmpHistory;
 import com.iceroom.fundamental.entity.Employer;
+import com.iceroom.fundamental.entity.EmployerApplication;
 import com.iceroom.fundamental.entity.Role;
 import com.iceroom.fundamental.entity.User;
 import com.iceroom.fundamental.service.IAccountService;
@@ -41,6 +43,7 @@ public class AccountService implements IAccountService {
     private IEmpHistoryDao empHistoryDao;
     private IEduHistoryDao eduHistoryDao;
     private IEmailService emailService;
+    private IEmployerApplicationDao employerApplicationDao;
     private String hql;
     private final String FIRST_ACCOUNT = "c10086";// If there is no candidate, use this as the first account.
     private final String ROLE_CANDIDATE_NAME = "ROLE_CANDIDATE";// the role name of candidates.
@@ -259,6 +262,63 @@ public class AccountService implements IAccountService {
     }
 
     /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAccountService#acceptEmpApp(com.iceroom.fundamental.entity.Employer, java.lang.String, java.lang.String, long)
+     */
+    @Override
+    @Transactional
+    public void acceptEmpApp(Employer employer, String account,
+            String password, long appId) {
+        /* Step 1, create a new User entity. */
+        User newUser = new User();
+        newUser.setAccount(account);
+        ShaPasswordEncoder encoder = new ShaPasswordEncoder();
+        password = encoder.encodePassword(password, account);
+        newUser.setPassword(password);
+        newUser.setEnabled(true);
+        newUser.setRegDate(Calendar.getInstance());
+        long userId = (Long)userDao.create(newUser);
+        
+        /* Step 2, set the user's role to ROLE_EMPLOYER. */
+        newUser = userDao.getEntityById(userId);
+        String hql = "from Role r where r.name=?1";
+        Role role = roleDao.findSingleByHql(hql, ROLE_EMPLOYER_NAME);
+        Set<Role> roles = new HashSet<Role>();
+        roles.add(role);
+        newUser.setRoles(roles);
+        userDao.update(newUser);
+        
+        /* Step 3, Initialise the user's employer information. */
+        Employer emp = new Employer();
+        emp.setUser(newUser);
+        emp.setName(employer.getName());
+        emp.setPhone(employer.getPhone());
+        emp.setEmail(employer.getEmail());
+        emp.setAddrStreet(employer.getAddrStreet());
+        emp.setAddrCity(employer.getAddrCity());
+        emp.setAddrState(employer.getAddrState());
+        emp.setAddrCountry(employer.getAddrCountry());
+        emp.setZip(employer.getZip());
+        emp.setStatement(employer.getStatement());
+        employerDao.create(emp);
+        
+        /* Step 4, update the Application object's status */
+        EmployerApplication app = employerApplicationDao.getEntityById(appId);
+        app.setStatus(EmployerApplication.STATUS_ACCEPTED);
+        employerApplicationDao.update(app);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAccountService#refuseEmpApp(long)
+     */
+    @Override
+    @Transactional
+    public void refuseEmpApp(long appId) {
+        EmployerApplication app = employerApplicationDao.getEntityById(appId);
+        app.setStatus(EmployerApplication.STATUS_REJECTED);
+        employerApplicationDao.update(app);
+    }
+
+    /* (non-Javadoc)
      * @see com.iceroom.fundamental.service.IAccountService#retrievePWD(java.lang.String, java.lang.String)
      */
     @Override
@@ -303,6 +363,18 @@ public class AccountService implements IAccountService {
         
         // Send email
         emailService.sendResetPasswordEmail(user.getAccount(), email, newPWD);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IAccountService#saveEmployerApplication(com.iceroom.fundamental.entity.EmployerApplication)
+     */
+    @Override
+    @Transactional
+    public void saveEmployerApplication(EmployerApplication application) {
+        application.setStatus(EmployerApplication.STATUS_INQUEUE);
+        application.setApplyTime(Calendar.getInstance());
+        employerApplicationDao.create(application);
+        System.out.println("here");
     }
 
     /**
@@ -352,6 +424,14 @@ public class AccountService implements IAccountService {
      */
     public void setEmailService(IEmailService emailService) {
         this.emailService = emailService;
+    }
+
+    /**
+     * @param employerApplicationDao the employerApplicationDao to set
+     */
+    public void setEmployerApplicationDao(
+            IEmployerApplicationDao employerApplicationDao) {
+        this.employerApplicationDao = employerApplicationDao;
     }
 
 }

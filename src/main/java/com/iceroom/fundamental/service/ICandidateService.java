@@ -148,5 +148,18 @@ public interface ICandidateService {
      * @param user
      */
     void updateCandidateNameEmail(User user);
+    
+    /**
+     * Update a candidate's video url.
+     * @param url The url.
+     */
+    void updateVideoUrl(String url);
+    
+    /**
+     * Persist a Feedback entity.
+     * @param user The User object who sends the feedback.
+     * @param content The content of the feedback.
+     */
+    void saveFeedback(User user, String content);
 
 }

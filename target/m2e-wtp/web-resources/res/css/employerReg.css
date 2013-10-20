@@ -1,0 +1,100 @@
+@import url(global.css);
+@import url(template_default.css);
+
+#content {
+    background-color: #fff;
+    width: 920px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #ccc;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;box-shadow:1px 1px 2px #cfcfcf;-moz-box-shadow:1px 1px 2px #cfcfcf;-webkit-box-shadow:1px 1px 2px #cfcfcf;behavior:url(js/PIE.htc);
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#content #title {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3691A6;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+.row {
+    clear: both;
+}
+
+.row .key {
+    margin-left: 60px;
+    width: 140px;
+    font-weight: bold;
+}
+
+.row .value {
+    margin-left: 10px;
+}
+
+.row .key, .row .value {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+.row .value input[type="text"] {
+    border: 1px solid #ffcc00;
+    text-indent: 4px;
+    font-size: 12px;
+    width: 600px;
+}
+
+.row .statement {
+    height: 300px;
+}
+
+.row .value textarea {
+    border: 1px solid #ffcc00;
+    font-size: 12px;
+    width: 600px;
+    height: 300px;
+}
+
+.row .value label {
+    color: #ff0000;
+}
+
+.opbar {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-left: 210px;
+    margin-bottom: 20px;
+}
+
+.opbar input {
+    border: 1px solid #000;
+    background-color: #3692a6;
+    font-size: 14px;
+    width: 80px;
+    height: 25px;
+    color: #fff;
+}
+
+.opbar input:hover {
+    background-color: #ff9933;
+    cursor: pointer;
+}
+
+.opbar .msg {
+    line-height: 20px;
+    font-size: 13px;
+    color: #3692a6;
+    font-weight: bold;
+}

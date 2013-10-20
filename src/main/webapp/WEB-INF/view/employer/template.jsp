@@ -65,6 +65,9 @@
         <li class="icn_security">
             <a href="/employer/pwd">Change Password</a>
         </li>
+        <li class="icn_edit_article">
+            <a href="/employer/feedback">Feedback</a>
+        </li>
         <li class="icn_jump_back">
             <a href='<c:url value="/j_spring_security_logout"/>'>Logout</a>
         </li>

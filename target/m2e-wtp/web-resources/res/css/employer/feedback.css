@@ -1,0 +1,10 @@
+@import url(employer_global.css);
+
+textarea {
+    width: 700px;
+    height: 300px;
+}
+
+.msg {
+    display: none;
+}

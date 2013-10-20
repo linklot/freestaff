@@ -12,9 +12,9 @@
         class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close"
         p:driverClass="com.mysql.jdbc.Driver"
-        p:jdbcUrl="jdbc:mysql://localhost:3306/iceroom"
-        p:user="root"
-        p:password="2006"
+        p:jdbcUrl="jdbc:mysql://localhost:3306/freesta_freestaff"
+        p:user="freesta_root"
+        p:password="19890604"
         p:minPoolSize="0"
         p:maxPoolSize="20"
         p:maxStatements="30"
@@ -31,10 +31,12 @@
                 <prop key="use_sql_comments">true</prop>
                 <prop key="hibernate.c3p0.min_size">0</prop>
                 <prop key="hibernate.c3p0.max_size">20</prop>
-                <prop key="hibernate.c3p0.timeout">100</prop>
+                <prop key="hibernate.c3p0.timeout">1800</prop>
                 <prop key="hibernate.c3p0.max_statements">30</prop>
-                <prop key="hibernate.c3p0.idle_test_period">30</prop>
+                <prop key="hibernate.c3p0.idle_test_period">100</prop>
                 <prop key="hibernate.c3p0.acquire_increment">1</prop>
+                <prop key="hibernate.c3p0.preferredTestQuery">SELECT 1</prop>
+                <prop key="hibernate.c3p0.testConnectionOnCheckout">true</prop>
             </props>
         </property>
     </bean>

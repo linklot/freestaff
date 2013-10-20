@@ -226,10 +226,12 @@
     padding: 0;
     margin: 0;
     font-size: 20px;
+    float: left;
+    width: 60px;
 }
 
 #info5_wrapper .video {
-    width: 180px;
+    width: 205px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -423,6 +425,56 @@
     margin-left: 15px;
     background: #fff;
     border: 1px solid #ccc;
+}
+
+#right_pad .sep_bar {
+    height: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #ccc;
+    margin-bottom: 5px;
+}
+
+#right_pad .feedback_wrapper {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#right_pad .feedback_wrapper .title {
+    height: 16px;
+    background: url(/res/image/bell.png) no-repeat;
+    text-indent: 22px;
+}
+
+#right_pad .feedback_wrapper .form_area {
+    display: none;
+}
+
+#right_pad .feedback_wrapper .form_area textarea {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    width: 220px;
+    height: 200px;
+}
+
+input[type="submit"].btn {
+    border: 1px solid #999;
+    height: 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+input[type="submit"].btn:hover {
+    background-color: #50a6b7;
+    color: #fff;
+}
+
+#right_pad .return_msg {
+    margin: 10px;
+    color: #009933;
 }
 
 #new_invi_wrapper {
