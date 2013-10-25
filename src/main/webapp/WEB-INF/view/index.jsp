@@ -4,8 +4,9 @@
     <div class="cycle-slideshow"
         data-cycle-pause-on-hover="true"
         data-cycle-speed="3000">
-        <img src="/res/image/bg_img1.jpg">
-        <img src="/res/image/bg_img1.png">
+        <img src="/res/image/bg_img_001.png">
+        <img src="/res/image/bg_img_002.png">
+        <img src="/res/image/bg_img_003.png">
     </div>
     <div class="text">
         <span class="text1">
@@ -67,10 +68,10 @@
                     Freestaff was created so that Employers in Australia can easily search and find Skilled Migrant workers for their jobs.
                 </p>
                 <p>
-                    If you are a Skilled Migrant you can <a href="/candidate">become a member</a> of our site for only $8.25 a month*.
+                    If you are a Skilled Migrant you can <a href="/reg">become a member</a> of our site for only $8.25 a month*.
                 </p>
                 <p>
-                    If you are an Employer then <a href="/employer">Register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are
+                    If you are an Employer then <a href="/employerReg">Register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are
                 </p>
                 <p class="center">
                     READY &amp; WILLING TO WORK!

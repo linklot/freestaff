@@ -2,7 +2,7 @@
 @import url(template_default.css);
 
 #content {
-    background: url(/res/image/bg_cont.gif);
+    background-color: #FFF;
     width: 920px;
     margin-top: 20px;
     margin-left: auto;
@@ -19,6 +19,14 @@
     font-weight: bold;
     color: #3691A6;
     margin-bottom: 20px;
+}
+
+#content ul {
+    margin-right: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-left: 60px;
 }
 
 p {

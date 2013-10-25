@@ -32,4 +32,10 @@ public interface IGeneralService {
      */
     Post getPostFarmWork();
     
+    /**
+     * Get the particular post "Jobs"
+     * @return {@link Post}
+     */
+    Post getPostJobs();
+    
 }

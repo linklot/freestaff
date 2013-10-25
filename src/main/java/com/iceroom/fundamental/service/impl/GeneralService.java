@@ -17,6 +17,7 @@ public class GeneralService implements IGeneralService {
     private final long POST_ID_MEMBERSHIP = 3L;
     private final long POST_ID_VISAADVICE = 4L;
     private final long POST_ID_FARMWORK = 5L;
+    private final long POST_ID_JOBS = 6L;
     
     private IPostDao postDao;
 
@@ -47,6 +48,14 @@ public class GeneralService implements IGeneralService {
     @Override
     public Post getPostFarmWork() {
         return postDao.getEntityById(POST_ID_FARMWORK);
+    }
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IGeneralService#getJobs()
+     */
+    @Override
+    public Post getPostJobs() {
+        return postDao.getEntityById(POST_ID_JOBS);
     }
 
     /**

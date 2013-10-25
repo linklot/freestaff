@@ -10,6 +10,15 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<!-- top bar -->
+<div class="topbar">
+    <div class="wrapper">
+        <span class="cand_signup_wrapper"><a href="/reg">Candidate SignUp</a></span>
+        <span class="emp_signup_wrapper"><a href="/employerReg">Employer Register</a></span>
+    </div>
+</div>
+<!-- top bar end -->
+
 <!--  header -->
 <header>
     <div class="wrapper">
@@ -30,19 +39,19 @@
             <li>
                 <a href="/candidate">
                     <span>
-                        <span><div class="double_line">CANDIDATE SIGN IN</div></span>
+                        <span><div class="double_line">CANDIDATE LOG IN</div></span>
                     </span>
                 </a>
             </li>
             <li>
                 <a href="/employer">
                     <span>
-                        <span><div class="double_line">EMPLOYER SIGN IN</div></span>
+                        <span><div class="double_line">EMPLOYER LOG IN</div></span>
                     </span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/jobs">
                     <span>
                         <span>JOBS</span>
                     </span>

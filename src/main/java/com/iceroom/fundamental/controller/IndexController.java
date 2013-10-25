@@ -153,6 +153,12 @@ public class IndexController {
         return "post";
     }
     
+    @RequestMapping(value="/jobs", method=RequestMethod.GET)
+    public String showJobs(Model model) {
+        model.addAttribute("post", generalService.getPostJobs());
+        return "post";
+    }
+    
     @RequestMapping(value="credit", method=RequestMethod.GET)
     public String showCredit() {
         return "credit";

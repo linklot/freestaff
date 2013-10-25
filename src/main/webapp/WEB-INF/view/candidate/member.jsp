@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/res/js/candidate/member.js"></script>
 <div class="wrapper">
     <div id="pad">
-        <h2>Active/Renew Your Membership</h2>
+        <h2>Activate/Renew Your Membership</h2>
         <span class="backward"><a href="#" id="closeLink">Close</a></span>
         <div class="clearFloat"></div>
         <div class="note">
@@ -13,23 +13,31 @@
         <div class="pay_wrapper">
             <div class="pay_option op1">
                 <div class="header">6 Months</div>
-                <div class="body">$79.00 $13.00/mon</div>
+                <div class="body">
+                    <div class="total">AUD $79.00</div>
+                    <div class="permon">$13.20/month</div>
+                </div>
                 <div class="footer">
                     <script src="/res/js/paypal-button.min.js?merchant=2PJTT787LJVMY"
                         data-button="buynow"
                         data-name="FreeStaff Membership 6 months"
-                        data-amount="79.00">
+                        data-amount="79.00"
+                        data-currency="AUD">
                     </script>
                 </div>
             </div>
             <div class="pay_option op2">
                 <div class="header">12 Months</div>
-                <div class="body">$99.00 $8.00/mon</div>
+                <div class="body">
+                    <div class="total">AUD $99.00</div>
+                    <div class="permon">$8.25/month</div>
+                </div>
                 <div class="footer">
                     <script src="/res/js/paypal-button.min.js?merchant=2PJTT787LJVMY"
                         data-button="buynow"
                         data-name="FreeStaff Membership 12 months"
-                        data-amount="99.00">
+                        data-amount="99.00"
+                        data-currency="AUD">
                     </script>
                 </div>
             </div>
