@@ -16,7 +16,7 @@
                     <input type="hidden" id="cid" name="cid" value='<c:out value="${user.id}"/>'/>
                     <input type="file" id="pic_file" name="pic_file"/>
                     <input type="submit" id="btnSubmit" value="Upload"/>
-                    <label id="msgLbl" for="btnSubmit"></label>
+                    <label id="lbl_msg" for="btnSubmit"></label>
                 </form:form>
             </div>
         </div>

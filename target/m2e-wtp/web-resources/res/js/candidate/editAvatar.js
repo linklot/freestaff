@@ -1,4 +1,5 @@
-var form, file, cid;
+var form, file, cid, lbl_msg, target;
+$.ajaxSetup({cache: false});
 
 $(document).ready(function() {
     form = $('#pic_form');
@@ -7,6 +8,8 @@ $(document).ready(function() {
         checkFileForm();
     });
     cid = $('#cid').val();
+    lbl_msg = $('#lbl_msg');
+    target = $('#avatar');
     ajaxGetAvatar();
 });
 
@@ -31,6 +34,7 @@ function checkFileForm() {
 }
 
 function ajaxUpload() {
+    lbl_msg.text('Upload...');
     $.ajax({
         type: 'POST',
         url: '/candidate/editAvatar',
@@ -39,7 +43,10 @@ function ajaxUpload() {
             return myXhr;
         },
         data: new FormData(form[0]),
-        success: function() { ajaxGetAvatar(); },
+        success: function() {
+            lbl_msg.text('Uploading finished.');
+            ajaxGetAvatar();
+        },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " : " + thrownError);
         },
@@ -50,15 +57,13 @@ function ajaxUpload() {
 }
 
 function ajaxGetAvatar() {
+    target.html('');
     $.ajax({
         type: 'GET',
         url: '/candidate/avatar/' + cid,
-        success: function(data) { populateAvatar(data); },
+        success: function(data) {
+            target.html('<img src="'+ data +'" width="200" height="200"/>');
+        },
         error: function() { alert('fail'); }
     });
-}
-
-function populateAvatar(data) {
-    var target = $('#avatar');
-    target.html('<img src="'+ data +'" width="200" height="200"/>');
 }
