@@ -8,7 +8,11 @@ FreeStaff is a web-based job-seeking application which allows candidates to sign
 Technologies / frameworks using:
 -------------------------------------
 
-JavaEE 6, Spring 3.2, Spring MVC, Spring Security 3.1, Hibernate 4.2, MySQL 5, and other relating components.
+- JavaEE 6 + Tomcat 7
+- Spring 3.2, Spring MVC, Spring Security 3.1, Hibernate 4.2, MySQL 5
+- JSP, Apache Tiles
+- jQuery 1.10
+- and others
 
 Designer/Developer:
 ----------------------
