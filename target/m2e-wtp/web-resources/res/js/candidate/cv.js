@@ -1,5 +1,5 @@
 var form, cvFile, lbl_b;
-var max = 5242880; //5M
+var max = 2097152; //2M
 
 $(document).ready(function() {
     form = $('#cvForm');
@@ -13,7 +13,7 @@ $(document).ready(function() {
     cvFile.bind('change', function() {
         //this.files[0].size gets the size of your file.
         if(this.files[0].size > max) {
-            lbl_b.text('File is too large.');
+            lbl_b.text('File size is too large.');
             cvFile.replaceWith( cvFile = cvFile.clone( true ) );
         } else lbl_b.text('');
     });
@@ -32,12 +32,12 @@ function checkForm() {
     } else {
         var ext = fileName.substr(fileName.lastIndexOf('.') + 1);
         ext = ext.toLowerCase();
-        if(ext == 'pdf') {
+        if((ext == 'pdf') || (ext == 'doc') || (ext == 'docx') || (ext == 'rtf') || (ext == 'txt')) {
             lbl_b.text('');
             return true;
         }
         else {
-            lbl_b.text('Only PDF file.')
+            lbl_b.text('Only support .doc, .docx, .pdf, .rtf, &amp; .txt');
             return false;
         }
     }

@@ -5,9 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>FreeStaff</title>
+<title>Freestaff - Skilled Migrants Solutions</title>
 <link type="text/css" rel="stylesheet" href="${request.contextPath}<tiles:getAsString name='css'/>"/>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!-- top bar -->
@@ -58,7 +57,7 @@
                 </a>
             </li>
             <li class="omega">
-                <a href="/about">
+                <a href="/about" target="_blank">
                     <span>
                         <span>ABOUT</span>
                     </span>

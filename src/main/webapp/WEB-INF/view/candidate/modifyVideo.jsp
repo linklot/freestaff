@@ -14,7 +14,7 @@
         <div class="row">
             <div class="key">Video ID:</div>
             <div class="value">
-                <input type="text" id="videoUrl" name="videoUrl"/>
+                <input type="text" id="videoUrl" name="videoUrl" value='<c:out value="${user.candidate.videoUrl}"/>'/>
             </div>
             <div class="show"><a href="#" id="hrefPreview">Preview</a></div>
         </div>

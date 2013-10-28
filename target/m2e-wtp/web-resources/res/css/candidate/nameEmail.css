@@ -53,6 +53,7 @@
 
 #pad .opt_bar {
     margin-top: 10px;
+    margin-left: 15px;
 }
 
 #pad .row {
@@ -68,26 +69,7 @@
 #pad .row .key {
     font-weight: bold;
     margin-left: 20px;
-    width: 100px;
-}
-
-#pad .row .value {
-    
-}
-
-#pad input[type="submit"] {
-    background-color: #3691A6;
-    color: #fff;
-    width: 70px;
-    height: 25px;
-    line-height: 15px;
-    font-weight: bold;
-    border: 1px solid #333;
-}
-
-#pad input[type="submit"]:hover {
-    background-color: #336699;
-    cursor: pointer;
+    width: 80px;
 }
 
 #pad .row .value input {

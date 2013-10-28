@@ -78,7 +78,6 @@
 #pad input[type="text"] {
     border: 1px solid #333;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
     width: 300px;
     text-indent: 2px;
 }
@@ -95,6 +94,5 @@
 
 #pad select {
     border: 1px solid #333;
-    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
 }

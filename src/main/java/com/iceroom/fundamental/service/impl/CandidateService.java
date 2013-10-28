@@ -274,15 +274,18 @@ public class CandidateService implements ICandidateService {
     @Override
     @Transactional
     public void saveCV(User user, MultipartFile file) throws Exception {
+        String filename = file.getOriginalFilename();
+        String ext = filename.substring(filename.lastIndexOf("."));
+        
         Candidate candidate = userDao.getEntityById(user.getId()).getCandidate();
         long id = user.getId();
         
         /* Save file to the hard disk. */
-        File cvfile = new File(cvFilePath + id + ".pdf");
+        File cvfile = new File(cvFilePath + id + ext);
         FileUtils.writeByteArrayToFile(cvfile, file.getBytes());
         
         /* Update Candidate entity. */
-        candidate.setCvUrl(id + ".pdf");
+        candidate.setCvUrl(id + ext);
         candidateDao.update(candidate);
         
     }

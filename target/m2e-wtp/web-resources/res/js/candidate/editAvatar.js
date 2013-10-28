@@ -34,7 +34,7 @@ function checkFileForm() {
 }
 
 function ajaxUpload() {
-    lbl_msg.text('Upload...');
+    lbl_msg.text('Uploading..');
     $.ajax({
         type: 'POST',
         url: '/candidate/editAvatar',
@@ -44,8 +44,7 @@ function ajaxUpload() {
         },
         data: new FormData(form[0]),
         success: function() {
-            lbl_msg.text('Uploading finished.');
-            ajaxGetAvatar();
+            window.location.href = '/candidate';
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + " : " + thrownError);
@@ -62,7 +61,15 @@ function ajaxGetAvatar() {
         type: 'GET',
         url: '/candidate/avatar/' + cid,
         success: function(data) {
-            target.html('<img src="'+ data +'" width="200" height="200"/>');
+            var photo = new Image();
+            photo.src = data;
+            var width = photo.width;
+            var height = photo.height;
+            if(width > 200) {
+                target.html('<img id="photo" src="'+ data +'" width="200"/>');
+            } else if(height > 200) {
+                target.html('<img id="photo" src="'+ data +'" height="200"/>');
+            } else target.html('<img id="photo" src="'+ data +'"/>');
         },
         error: function() { alert('fail'); }
     });

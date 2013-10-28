@@ -6,11 +6,11 @@
         <form:form modelAttribute="cand" id="candForm" name="cand">
         <header>
             <h3>Candidate Details</h3>
-            <h6>Send Invitation</h6>
+            <input type="submit" value="Send Invitation" class="alt_btn head_btn"/>
         </header>
         <div class="module_content">
             <div id="avatar_wrapper">
-                <img src='<c:out value="${cand.candidate.picUrl}"/>' width="200" height="200"/>
+                <img src='<c:out value="${cand.candidate.picUrl}"/>' id="photo"/>
                 <span>
                     <c:out value="${cand.candidate.firstName}"/>
                     <c:out value="${cand.candidate.lastName}"/>
@@ -106,26 +106,36 @@
                     <div class="key">Key Skills:</div>
                     <div class="value"></div>
                 </div>
+                <c:if test="${!empty cand.candidate.keySkill1}">
                 <div class="row">
                     <div class="key">1</div>
                     <div class="value"><c:out value="${cand.candidate.keySkill1}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty cand.candidate.keySkill2}">
                 <div class="row">
                     <div class="key">2</div>
                     <div class="value"><c:out value="${cand.candidate.keySkill2}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty cand.candidate.keySkill3}">
                 <div class="row">
                     <div class="key">3</div>
                     <div class="value"><c:out value="${cand.candidate.keySkill3}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty cand.candidate.keySkill4}">
                 <div class="row">
                     <div class="key">4</div>
                     <div class="value"><c:out value="${cand.candidate.keySkill4}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty cand.candidate.keySkill5}">
                 <div class="row">
                     <div class="key">5</div>
                     <div class="value"><c:out value="${cand.candidate.keySkill5}"/></div>
                 </div>
+                </c:if>
             </div>
             <div class="clear"></div>
             <div id="assess_wrapper">
@@ -162,6 +172,7 @@
             <div id="empHistory_wrapper">
                 <h2>Employment History</h2>
                 <c:forEach var="history" items="${cand.candidate.empHistories}" varStatus="status">
+                <c:if test="${!empty history.name}">
                 <div class="work">
                     <div class="left">
                         <div class="row">
@@ -185,12 +196,14 @@
                     <div class="clear"></div>
                 </div>
                 <div class="separator"></div>
+                </c:if>
                 </c:forEach>
             </div>
             <div class="clear"></div>
             <div id="edu_wrapper">
                 <h2>Education History</h2>
                 <c:forEach var="history" items="${cand.candidate.eduHistories}" varStatus="status">
+                <c:if test="${!empty history.qualifType}">
                     <div class="row">
                         <div class="key">Qualification</div>
                         <div class="value">
@@ -220,6 +233,7 @@
                         <div class="clear"></div>
                     </div>
                     <div class="separator"></div>
+                </c:if>
                 </c:forEach>
             </div>
             <div id="interests_wrapper">

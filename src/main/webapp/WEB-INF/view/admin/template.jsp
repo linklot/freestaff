@@ -9,8 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>FreeStaff Administrator</title>
 <link type="text/css" rel="stylesheet" href="${request.contextPath}<tiles:getAsString name='css'/>"/>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/res/js/jquery.js"></script>
+<script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/res/js/hideshow.js" type="text/javascript"></script>
 <script src="/res/js/jquery.tablesorter.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/res/js/jquery.equalHeight.js"></script>

@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/res/js/candidate/nameEmail.js"></script>
 <div class="wrapper">
     <div id="pad">
-        <h2>Modify Name &amp; Email</h2>
+        <h2>Edit Name &amp; Email</h2>
         <span class="backward"><a href="/candidate">Back to Bio Page</a></span>
         <div class="clearFloat"></div>
         <form:form modelAttribute="user" id="nameForm"><form:hidden path="id"/><form:hidden path="candidate.id"/>

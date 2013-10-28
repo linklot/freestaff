@@ -7,18 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Free Staff</title>
-<link type="text/css" rel="stylesheet" href="${request.contextPath}<tiles:getAsString name='css'/>"/>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/res/js/jquery.js"></script>
+<title>Freestaff - Skilled Migrants Solutions</title>
+<link type="text/css" rel="stylesheet" href="${request.contextPath}<tiles:getAsString name='css'/>">
+<script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 <!--  header -->
 <header>
     <div id="top_bar">
         <div class="wrapper">
-            <div class="signout"><a href='<c:url value="j_spring_security_logout"/>'>Sign out</a></div>
-            <div class="greeting">Welcome, <c:out value="${user.candidate.firstName}"/>.
+            <div class="signout"></div>
+            <div class="greeting">
+                Welcome, <c:out value="${user.candidate.firstName}"/>
+                <c:out value="${user.candidate.lastName}"/>
             <div class="clearFloat"></div>
             </div>
         </div>
@@ -60,7 +61,7 @@
                 </a>
             </li>
             <li class="omega">
-                <a href="/about">
+                <a href="/about" target="_blank">
                     <span>
                         <span>ABOUT</span>
                     </span>

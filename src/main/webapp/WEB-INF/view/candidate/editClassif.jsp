@@ -74,7 +74,23 @@
         </div>
         <div class="row">
             <div class="key">Highest Qualification</div>
-            <div class="value"><form:input path="candidate.HighestQualif"/></div>
+            <div class="value">
+                <label for="highestQualif">
+                    <c:if test="${!empty user.candidate.highestQualif}"><c:out value="${user.candidate.highestQualif}"/></c:if>
+                </label>
+                <form:select id="highestQualif" path="candidate.highestQualif">
+                    <option value="Doctorate">Doctorate</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                    <option value="Graduate Diploma">Graduate Diploma</option>
+                    <option value="Graduate Certificate">Graduate Certificate</option>
+                    <option value="Bachelor Degree">Bachelor Degree</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Certificate">Certificate</option>
+                    <option value="Apprenticeship">Apprenticeship</option>
+                    <option value="Trade School Certificate">Trade School Certificate</option>
+                    <option value="High School Certificate">High School Certificate</option>
+                </form:select>
+            </div>
             <div class="clearFloat"></div>
         </div>
         <div class="row">

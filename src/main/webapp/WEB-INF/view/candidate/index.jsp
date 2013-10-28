@@ -13,24 +13,37 @@
             <div class="clearFloat"></div>
             <div id="photo_wrapper">
                 <div id="photo">
-                    <img src='<c:out value="${user.candidate.picUrl}"/>' width='200' height='200'/>
-                    <div class="photo_edit_prompt">Edit your avatar</div>
+                    <img id="photo_img" src='<c:out value="${user.candidate.picUrl}"/>'/>
+                    <div class="photo_edit_prompt">upload your photo</div>
                 </div>
                 <div id="number">Reg ID: <c:out value="${user.account}"/></div>
             </div>
 
             <div id="op_wrapper">
                 <div class="row">
-                    <div class="key"><a href="/candidate/nameEmail">Modify Name &amp; Email</a></div>
+                    <div class="key"><a href="/candidate/nameEmail">Edit Name &amp; Email</a></div>
                 </div>
                 <div class="row">
-                    <div class="key"><a href="/candidate/pwd">Modify Password</a></div>
+                    <div class="key"><a href="/candidate/pwd">Edit Password</a></div>
                 </div>
                 <div class="row">
-                    <div class="key"><a href="/candidate/cv">Upload CV</a></div>
+                    <div class="key">
+                        <c:if test="${user.candidate.cvUrl!=''}">
+                            <a href="/candidate/cv">Update CV</a> |
+                            <a href='/candidate/downloadcv' target='_blank'>Download</a>
+                        </c:if>
+                        <c:if test="${user.candidate.cvUrl==''}">
+                            <a href="/candidate/cv">Add CV</a>
+                        </c:if>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="key"><a href="/candidate/paymentHistory" target="_blank">Payment History</a></div>
+                </div>
+                <div class="membership_description">
+                    <p>Your profile will be LIVE and searchable by thousands of Employers once you ACTIVATE your membership!</p>
+                    <p>ACTIVATE your membership from only $8.25* per month!</p>
+                    <p class="note">* based on a 12 month membership </p>
                 </div>
             </div>
 
@@ -127,26 +140,36 @@
                     <div class="keyskills">Key Skills:</div>
                     <div class="value modify_row"><a href="/candidate/keySkills">Edit</a></div>
                 </div>
+                <c:if test="${!empty user.candidate.keySkill1}">
                 <div class="row">
                     <div class="key indent">1</div>
                     <div class="value"><c:out value="${user.candidate.keySkill1}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty user.candidate.keySkill2}">
                 <div class="row">
                     <div class="key indent">2</div>
                     <div class="value"><c:out value="${user.candidate.keySkill2}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty user.candidate.keySkill3}">
                 <div class="row">
                     <div class="key indent">3</div>
                     <div class="value"><c:out value="${user.candidate.keySkill3}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty user.candidate.keySkill4}">
                 <div class="row">
                     <div class="key indent">4</div>
                     <div class="value"><c:out value="${user.candidate.keySkill4}"/></div>
                 </div>
+                </c:if>
+                <c:if test="${!empty user.candidate.keySkill5}">
                 <div class="row">
                     <div class="key indent">5</div>
                     <div class="value"><c:out value="${user.candidate.keySkill5}"/></div>
                 </div>
+                </c:if>
             </div>
             <div class="clearFloat"></div>
             <div id="info6_wrapper">
@@ -199,6 +222,7 @@
             <div class="modify_row"><a href="/candidate/empHistory">Edit</a></div>
             <div class="clearFloat"></div>
             <c:forEach var="history" items="${user.candidate.empHistories}" varStatus="status">
+            <c:if test="${!empty history.name}">
             <div class="work">
                 <div class="left">
                     <div class="row">
@@ -222,6 +246,7 @@
                 <div class="clearFloat"></div>
             </div>
             <c:if test="${!status.last}"><div class="separator"></div></c:if>
+            </c:if>
             <div class="clearFloat"></div>
             </c:forEach>
         </div>
@@ -231,6 +256,7 @@
             <div class="modify_row"><a href="/candidate/eduHistory">Edit</a></div>
             <div class="clearFloat"></div>
             <c:forEach var="history" items="${user.candidate.eduHistories}" varStatus="status">
+            <c:if test="${!empty history.qualifType}">
             <div class="edu">
                 <div class="row">
                     <div class="key">Qualification</div>
@@ -254,6 +280,7 @@
                 </div>
             </div>
             <c:if test="${!status.last}"><div class="separator"></div></c:if>
+            </c:if>
             </c:forEach>
         </div>
 
@@ -282,6 +309,8 @@
                 </form>
             </div>
         </div>
+        <div class="sep_bar"></div>
+        <div class="signout_wrapper" id="btn_signout">Sign Out</div>
         <div class="return_msg"></div>
     </div>
     <div class="clearFloat"></div>

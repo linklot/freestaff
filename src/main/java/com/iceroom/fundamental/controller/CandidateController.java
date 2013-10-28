@@ -95,7 +95,7 @@ public class CandidateController {
         
         candidateService.saveClassif(user, classifId, subClassifId);
         
-        return "redirect:/candidate/classif";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/ielts", method=RequestMethod.GET)
@@ -108,7 +108,7 @@ public class CandidateController {
     @RequestMapping(value="/ielts", method=RequestMethod.POST)
     public String updateIelts(User user) {
         candidateService.saveIelts(user);
-        return "redirect:/candidate/ielts";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/keySkills", method=RequestMethod.GET)
@@ -121,7 +121,7 @@ public class CandidateController {
     @RequestMapping(value="/keySkills", method=RequestMethod.POST)
     public String updateSkills(User user) {
         candidateService.saveKeySkills(user);
-        return "redirect:/candidate/keySkills";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/skillAssess", method=RequestMethod.GET)
@@ -134,7 +134,7 @@ public class CandidateController {
     @RequestMapping(value="/skillAssess", method=RequestMethod.POST)
     public String updateSkillAssess(User user) {
         candidateService.saveSkillAssess(user);
-        return "redirect:/candidate/skillAssess";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/pitch", method=RequestMethod.GET)
@@ -147,7 +147,7 @@ public class CandidateController {
     @RequestMapping(value="/pitch", method=RequestMethod.POST)
     public String updatePitch(User user) {
         candidateService.savePitch(user);
-        return "redirect:/candidate/pitch";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/empHistory", method=RequestMethod.GET)
@@ -164,7 +164,7 @@ public class CandidateController {
         List<EmpHistory> histories = candidateModel.getEmpHistories();
         User user = accountService.getCurrentCandidate();
         candidateService.saveEmpHistory(user, histories);
-        return "redirect:/candidate/empHistory";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/eduHistory", method=RequestMethod.GET)
@@ -181,7 +181,7 @@ public class CandidateController {
         List<EduHistory> histories = candidateModel.getEduHistories();
         User user = accountService.getCurrentCandidate();
         candidateService.saveEduHistory(user, histories);
-        return "redirect:/candidate/eduHistory";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/interests", method=RequestMethod.GET)
@@ -194,7 +194,7 @@ public class CandidateController {
     @RequestMapping(value="/interests", method=RequestMethod.POST)
     public String updateInterests(User user) {
         candidateService.saveInterests(user);
-        return "redirect:/candidate/interests";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/pwd", method=RequestMethod.GET)
@@ -217,8 +217,8 @@ public class CandidateController {
             valid = accountService.changePwd(user.getId(), user.getPassword(), newPwd);
         } else valid = false;
         
-        if(!valid) return "redirect:/candidate/pwd?err=y";
-        else return "redirect:/candidate/pwd?err=n";
+        if(!valid) return "redirect:/candidate";
+        else return "redirect:/candidate";
     }
     
     @RequestMapping(value="/cv", method=RequestMethod.GET)
@@ -236,7 +236,7 @@ public class CandidateController {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
-        return "redirect:/candidate/cv";
+        return "redirect:/candidate";
     }
     
     @RequestMapping(value="/downloadcv", method=RequestMethod.GET)
@@ -245,7 +245,17 @@ public class CandidateController {
         try {
             User user = accountService.getCurrentCandidate();
             InputStream is = (new FileSystemResource(candidateService.getCVFile(user))).getInputStream();
-            response.setContentType("application/pdf");
+            String filename = user.getCandidate().getCvUrl();
+            String ext = filename.split("\\.")[1].toLowerCase();
+            if(ext.equals("pdf"))
+                response.setContentType("application/pdf");
+            if(ext.equals("doc") || ext.equals("docx"))
+                response.setContentType("application/msword");
+            if(ext.equals("rtf"))
+                response.setContentType("application/rtf");
+            if(ext.equals("txt"))
+                response.setContentType("text/plain");
+            response.setHeader("Content-disposition", "attachment; filename="+ filename);
             IOUtils.copy(is, response.getOutputStream());
             response.flushBuffer();
         } catch(Exception ex) {

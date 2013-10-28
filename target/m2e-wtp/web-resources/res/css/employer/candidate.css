@@ -90,7 +90,7 @@
 #pitch_wrapper p {
     margin: 0;
     padding: 0;
-    height: 80px;
+    height: 250px;
     overflow: auto;
     white-space: pre-wrap;
 }
@@ -151,12 +151,8 @@
     background-color: #aaa;
 }
 
-#edu_wrapper {
-    margin-top: 30px;
-}
-
 #interests_wrapper {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #interests_wrapper h2 {
@@ -167,8 +163,6 @@
 }
 
 #interests_wrapper p {
-    height: 120px;
-    overflow: auto;
     margin: 0;
     padding: 0;
     white-space: pre-wrap;
@@ -176,4 +170,13 @@
 
 .module_content .video {
     margin-top: 5px;
+}
+
+header .head_btn {
+    margin-top: 5px;
+    margin-left: 350px;
+}
+
+input[type="submit"] {
+    font-size: 14px;
 }

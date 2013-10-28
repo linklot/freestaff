@@ -1,11 +1,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript" src="/res/js/jquery.js"></script>
+<script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/res/js/reg.js"></script>
 
 <section id="content">
     <form:form method="post" id="reg_form">
-    <div id="title">To join FreeStaff, sign up below... It's free!</div>
+    <div id="title">To join FreeStaff, sign up below...</div>
     <div id="note"><span class="significant">NOTE:</span> FREESTAFF IS FOR SKILLED MIGRANTS (NON CITIZENS) ONLY. PLEASE CONFIRM YOU ARE NOT A CITIZEN OF AUSTRALIA.</div>
     <div class="row">
         <div class="label">First Name:</div>

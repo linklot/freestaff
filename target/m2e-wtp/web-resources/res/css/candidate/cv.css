@@ -69,22 +69,6 @@
 
 #pad input[type="file"] {
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-#pad input[type="submit"] {
-    background-color: #3691A6;
-    color: #fff;
-    width: 70px;
-    height: 25px;
-    line-height: 15px;
-    font-weight: bold;
-    border: 1px solid #333;
-}
-
-#pad input[type="submit"]:hover {
-    background-color: #336699;
-    cursor: pointer;
 }
 
 #pad .opt_bar label {

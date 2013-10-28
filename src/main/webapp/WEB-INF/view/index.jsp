@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/res/js/jquery.js"></script>
+<script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/res/js/jquery.cycle2.min.js"></script>
 <div class="wrapper">
     <div class="cycle-slideshow"
@@ -7,13 +7,14 @@
         <img src="/res/image/bg_img_001.png">
         <img src="/res/image/bg_img_002.png">
         <img src="/res/image/bg_img_003.png">
+        <img src="/res/image/bg_img_004.png">
     </div>
     <div class="text">
         <span class="text1">
             FreeStaff
             <span>Skilled Migrant Solutions</span>
         </span>
-        <a href="/about" class="button">read more</a>
+        <a href="/membership" class="button">Join Now</a>
     </div>
     <div class="clearFloat"></div>
 </div>
@@ -68,7 +69,7 @@
                     Freestaff was created so that Employers in Australia can easily search and find Skilled Migrant workers for their jobs.
                 </p>
                 <p>
-                    If you are a Skilled Migrant you can <a href="/reg">become a member</a> of our site for only $8.25 a month*.
+                    If you are a Skilled Migrant you can <a href="/membership">become a member</a> of our site for only $8.25 a month*.
                 </p>
                 <p>
                     If you are an Employer then <a href="/employerReg">Register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are

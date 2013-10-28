@@ -77,3 +77,20 @@ nav #menu {
 footer {padding:25px 0 28px 0;width:100%;overflow:hidden;text-align:center;line-height:18px}
 footer a {}
 footer a:hover {}
+
+input[type=submit] {
+    background: url(/res/image/template/btn_submit.png) repeat-x;
+    border: 1px solid #A8A9A8;
+    height: 24px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background: url(/res/image/template/btn_submit_2.png) repeat-x;
+    color: #333333;
+}

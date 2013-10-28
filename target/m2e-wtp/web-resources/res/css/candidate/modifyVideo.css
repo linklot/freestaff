@@ -68,11 +68,7 @@
 #pad .row .key {
     font-weight: bold;
     margin-left: 20px;
-    width: 100px;
-}
-
-#pad .row .value {
-    
+    width: 70px;
 }
 
 #pad .row p {
@@ -80,7 +76,7 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 20px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #pad .row .show {

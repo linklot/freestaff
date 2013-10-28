@@ -14,7 +14,7 @@
             <div class="clearFloat"></div>
         </div>
         <div class="opt_bar">
-            <label for="cvFile">Only support PDF file. Max file size is 5M.</label><br/>
+            <label for="cvFile">Support .doc, .docx, .pdf, .rtf, &amp; .txt up to 2M.</label><br/>
             <input type="file" id="cvFile" name="cvFile"/>
             <input type="submit" id="btnSubmit" value="Update"/>
             <label id="lbl_b" for="btnSubmit"></label>

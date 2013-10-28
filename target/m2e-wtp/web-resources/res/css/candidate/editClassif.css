@@ -56,7 +56,7 @@
 
 #pad .row .key {
     font-weight: bold;;
-    width: 230px;
+    width: 180px;
     float: left;
     height: 30px;
     line-height: 30px;
@@ -98,7 +98,6 @@
 
 #pad select {
     border: 1px solid #333;
-    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
 }
 

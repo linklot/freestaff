@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/res/js/candidate/editSkillAssess.js"></script>
 <div class="wrapper">
     <div id="pad">
-        <h2>Edit IELTS Result</h2>
+        <h2>Edit Skills Assessment</h2>
         <span class="backward"><a href="/candidate">Back to Bio Page</a></span>
         <div class="clearFloat"></div>
         <form:form id="skillForm" method="post" modelAttribute="user">
