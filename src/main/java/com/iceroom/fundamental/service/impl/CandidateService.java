@@ -318,7 +318,7 @@ public class CandidateService implements ICandidateService {
     @Override
     @Transactional
     public List<Invitation> getInvitations(long userId) {
-        String hql = "from Invitation i where i.candidate.user.id=?1 and i.status<>6 order by i.status";
+        String hql = "from Invitation i where i.candidate.user.id=?1 and i.status<>6 order by i.id desc, i.status";
         List<Invitation> invis = invitationDao.findByHql(hql, userId);
         for(Invitation invi : invis) {
             invi.getEmployer().getId();

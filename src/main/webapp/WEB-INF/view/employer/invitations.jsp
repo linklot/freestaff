@@ -9,7 +9,7 @@
         <div class="module_content">
             <c:forEach var="invi" items="${invitations}">
             <div class="invi">
-                <div class="avatar"><img src="${invi.candidate.picUrl}" width="200" height="200"/></div>
+                <div class="avatar"><img src="${invi.candidate.picUrl}" class="img"/></div>
                 <div class="cand">
                     <div class="row">
                         <div class="key">Candidate Name</div>
@@ -23,6 +23,11 @@
                         <div class="key">Sub-Classification</div>
                         <div class="value"><c:out value="${invi.candidate.subClassif}"/></div>
                     </div>
+                    <div class="row">
+                        <div class="key">Date</div>
+                        <div class="value"><c:out value="${invi.friendlySendDate}"/></div>
+                    </div>
+                    <div class="clear"></div>
                     <div class="stats_row">
                         <div class="key">Invitation Status</div>
                         <div class="value">
@@ -39,6 +44,7 @@
                             </c:if>
                         </div>
                     </div>
+                    <div class="clear"></div>
                     <div class="op_row">
                         <c:if test="${invi.status!='6'}"><input type="button" class="withdraw" value="Withdraw" data-id='<c:out value="${invi.id}"/>'/></c:if>
                         <c:if test="${(invi.status=='5') || (invi.status=='6')}"><input type="button" class="resend" value="Re-send" data-id='<c:out value="${invi.id}"/>'/></c:if>

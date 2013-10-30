@@ -56,4 +56,10 @@
         <put-attribute name="currLoc" value="Feedback"/>
     </definition>
     
+    <definition name="invitationDescription" extends="employer_template">
+        <put-attribute name="content" value="/WEB-INF/view/employer/inviDescription.jsp" />
+        <put-attribute name="css" value="/res/css/employer/inviDescription.css"/>
+        <put-attribute name="currLoc" value="Position Description"/>
+    </definition>
+    
 </tiles-definitions>

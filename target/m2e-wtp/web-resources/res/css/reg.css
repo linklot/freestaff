@@ -45,25 +45,11 @@
     line-height: 30px;
 }
 
-#content input {
+#content input[type="text"], #content input[type="password"] {
     color: #003333;
     border: 1px solid #999;
     font-size: 13px;
     width: 200px;
-}
-
-#content input[type="submit"] {
-    background-color: #3691A6;
-    color: #fff;
-    height: 30px;
-    line-height: 18px;
-    width: 120px;
-}
-
-#content input[type="submit"]:hover {
-    background-color: #cc6600;
-    color: #fff;
-    cursor: pointer;
 }
 
 #content .omega {

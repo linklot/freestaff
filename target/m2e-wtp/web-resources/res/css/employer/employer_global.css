@@ -52,7 +52,7 @@ text-shadow: 0 -1px 0 #000;
 }
 
 header#header h1.site_title a {
-color: #fff;
+color: #ff0000;
 text-decoration: none;
 }
 
@@ -302,6 +302,9 @@ background: url(/res/image/template/icn_categories.png) no-repeat center left;
 }
 #sidebar li.icn_heart a {
 background: url(/res/image/template/icn_heart.png) no-repeat center left;
+}
+#sidebar li.icn_email a {
+background: url(/res/image/template/email.png) no-repeat center left;
 }
 #sidebar li.icn_tags a {
 background: url(/res/image/template/icn_tags.png) no-repeat center left;

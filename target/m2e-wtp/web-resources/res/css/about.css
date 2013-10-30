@@ -2,7 +2,7 @@
 @import url(template_default.css);
 
 #content {
-    background: url(/res/image/bg_cont.gif);
+    background-color: #fff;
     width: 920px;
     margin-top: 20px;
     margin-left: auto;
@@ -19,6 +19,10 @@
     font-weight: bold;
     color: #3691A6;
     margin-bottom: 20px;
+}
+
+section#content h1, section#content h3 {
+    margin-left: 60px;
 }
 
 p {
@@ -46,7 +50,6 @@ section ul li {
     height: 80px;
     line-height: 80px;
     width: 750px;
-    background-image: url('/res/image/about.png');
     background-position: right;
     background-repeat: no-repeat;
     text-indent: 40px;

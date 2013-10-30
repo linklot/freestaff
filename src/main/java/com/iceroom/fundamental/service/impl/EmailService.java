@@ -47,10 +47,14 @@ public class EmailService implements IEmailService {
             email.setSmtpPort(25);
             email.setAuthenticator(new DefaultAuthenticator(sender, password));
             email.addTo(candidate_email, "Candidate");
-            email.setFrom(sender, "FreeStaff Invitation Notification");
+            email.setFrom(sender, "Freestaff Invitation Notification");
             email.setSubject("Invitation Notification");
-            email.setHtmlMsg("<html><strong>Congrats! You've got an invitation!</strong><br/><br/>Please log in to <a href='http://www.freestaff.com.au' target='_blank'>FreeStaff</a> to check.</html>");
-            email.setTextMsg("Congrats! You've got an invitation! Please log in to http://www.freestaff.com.au to check.");
+            String htmlMsg = "<html><strong>Congratulations! An Australian Employer is keen to discuss a job opportunity with you! </strong>";
+            htmlMsg += "<br/><br/>Please <a href='http://www.freestaff.com.au' target='_blank'>log in</a> to your Freestaff Account to view.";
+            htmlMsg += "<br/><br/>Please do not reply to this message as it is from an unmonitored email address.";
+            htmlMsg += "<br/><br/>Good luck!<br/><br/>The Freestaff Team<br/>w : <a href='http://www.freestaff.com.au' target='_blank'>www.freestaff.com.au</a>";
+            htmlMsg += "<br/>fb : /freestaff<br/>tw : @freestaff1</html>";
+            email.setHtmlMsg(htmlMsg);
             email.send();
         } catch(Exception ex) {
             // Sending email fails
@@ -68,10 +72,13 @@ public class EmailService implements IEmailService {
             email.setSmtpPort(25);
             email.setAuthenticator(new DefaultAuthenticator(sender, password));
             email.addTo(candidate_email, "Candidate");
-            email.setFrom(sender, "FreeStaff");
+            email.setFrom(sender, "Freestaff");
             email.setSubject("Welcome!");
-            email.setHtmlMsg("<html><strong>Welcome to FreeStaff!<br/><br/> Your candidate account is <strong>"+ account +"</strong>.<br/><br/> Please <a href='http://freesta.jvmhost.net/candidate'>sign in</a> with your account and password.");
-            email.setTextMsg("Welcome to FreeStaff! Your candidate account is "+ account +". Please sign in to update your profile.");
+            String htmlMsg = "<html><strong>Welcome to Freestaff!<br/><br/> Your candidate account is <strong>"+ account +"</strong>.";
+            htmlMsg += "<br/><br/> Please <a href='http://freesta.jvmhost.net/candidate'>sign in</a> with your account and password.";
+            htmlMsg += "<br/><br/>The Freestaff Team<br/>w : <a href='http://www.freestaff.com.au' target='_blank'>www.freestaff.com.au</a>";
+            htmlMsg += "<br/>fb : /freestaff<br/>tw : @freestaff1</html>";
+            email.setHtmlMsg(htmlMsg);
             email.send();
         } catch(Exception ex) {
             // Sending email fails
@@ -92,8 +99,10 @@ public class EmailService implements IEmailService {
             _email.addTo(email, "FreeStaff User");
             _email.setFrom(sender, "FreeStaff");
             _email.setSubject("Password Reset");
-            _email.setHtmlMsg("<html>Your password has been reset.<br/><br/>Your Account: "+ account +"<br/>New Password: "+ newPWD +"<br/><br/>Please change your password after you logged-in.</html>");
-            _email.setTextMsg("Your password has been reset.<br/><br/>Your Account: "+ account +"<br/>New Password: "+ newPWD +"<br/><br/>Please change your password after you logged-in.");
+            String htmlMsg = "<html>Your password has been reset.<br/><br/>Your Account: "+ account +"<br/>New Password: "+ newPWD +"<br/><br/>Please change your password after you logged-in.";
+            htmlMsg += "<br/><br/>The Freestaff Team<br/>w : <a href='http://www.freestaff.com.au' target='_blank'>www.freestaff.com.au</a>";
+            htmlMsg += "<br/>fb : /freestaff<br/>tw : @freestaff1</html>";
+            _email.setHtmlMsg(htmlMsg);
             _email.send();
         } catch(Exception ex) {
             // Sending email fails

@@ -4,7 +4,7 @@
 <section id="content">
     <div class="signin_wrapper">
         <form method="post" action="j_spring_security_check" id="login_form">
-        <h2>Sign in to FreeStaff</h2>
+        <h2>Sign in to Freestaff</h2>
         <div class="row top">
             <div class="prompt">account:</div>
             <div class="input_area">
@@ -25,8 +25,8 @@
         <div class="row bottom">
             <div class="input_area"><input type="submit" value="LOG IN"/></div>
             <div class="hint">
-                or <a href="/reg">Join FreeStaff as a candidate</a><br/>
-                or <a href="/employerReg">join FreeStaff as an employer</a>
+                or <a href="/reg">Join Freestaff as a candidate</a><br/>
+                or <a href="/employerReg">Join Freestaff as an employer</a>
             </div>
             <div class="clearFloat"></div>
         </div>

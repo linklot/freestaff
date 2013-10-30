@@ -1,0 +1,14 @@
+@import url(employer_global.css);
+
+.head_btn {
+    margin-left: 430px;
+    margin-top: 5px;
+}
+
+.module_content textarea {
+    height: 400px;
+    width: 800px;
+    font-size: 14px;
+    border: 1px solid #666;
+    padding: 4px;
+}

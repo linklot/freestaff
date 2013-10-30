@@ -11,6 +11,7 @@
         <div class="module_content">
             <div id="avatar_wrapper">
                 <img src='<c:out value="${cand.candidate.picUrl}"/>' id="photo"/>
+                <div class="clear"></div>
                 <span>
                     <c:out value="${cand.candidate.firstName}"/>
                     <c:out value="${cand.candidate.lastName}"/>
@@ -77,8 +78,7 @@
             <div class="clear"></div>
             <div id="ielts_wrapper">
                 <div class="row">
-                    <div class="key">IELTS Scores:</div>
-                    <div class="value"></div>
+                    <div class="cross_cell">IELTS Scores:</div>
                 </div>
                 <div class="row">
                     <div class="key">Listening</div>

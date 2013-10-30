@@ -1,16 +1,8 @@
 var keyword, classif, subClassif;
 
 $(document).ready(function() {
-    keyword = $('#keyword');
     classif = $('#classif');
     subClassif = $('#sub-classif');
-
-    keyword.focus(function() {
-        if(!keyword.hasChanged) {
-            keyword.val('');
-            keyword.hasChanged = true;
-        }
-    });
 
     classif.change(function() {
         classifChange();

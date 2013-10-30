@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="key">Statement</div>
+            <div class="key noborder">Statement</div>
             <div class="state_value"><div class="statement"><c:out value="${employer.statement}"/></div></div>
             <div class="clearFloat"></div>
         </div>

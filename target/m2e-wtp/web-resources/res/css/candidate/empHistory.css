@@ -70,8 +70,8 @@
 }
 
 #pad .separator {
-    height: 1px;
-    background-color: #eee;
+    height: 2px;
+    background-color: #999;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -85,22 +85,8 @@
     text-indent: 2px;
 }
 
-#pad input[type="submit"] {
-    background-color: #3691A6;
-    color: #fff;
-    width: 70px;
-    height: 25px;
-    line-height: 15px;
-    font-weight: bold;
-}
-
-#pad input[type="submit"]:hover {
-    background-color: #336699;
-    cursor: pointer;
-}
-
 #pad .row .value label{
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 #pad .row .value .date {
@@ -109,6 +95,10 @@
 
 #pad .row .longtxt textarea {
     width: 600px;
-    height: 100px;
+    height: 200px;
+    border: 1px solid #333;
+}
+
+#pad select {
     border: 1px solid #333;
 }

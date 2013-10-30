@@ -37,7 +37,9 @@ public interface IEmployerService {
      * @return A set of User entity. List&lt;{@link User}&gt;
      */
     List<User> searchCandidates(String keywords, String classif,
-            String subClassif);
+            String subClassif, String birthCountry, String currCity,
+            String currCountry, int currVisaStatus, String highestQualif,
+            String qualifName, int canPayAirfare, int canPayVisaCost);
     
     /**
      * Get a candidate user entity.
@@ -50,8 +52,9 @@ public interface IEmployerService {
      * Create a new Invitation entity.
      * @param candId The id of a candidate.
      * @param employer The User entity as an employer.
+     * @param description The description of this invitation
      */
-    void createInvitation(long candId, User employer);
+    void createInvitation(long candId, User employer, String description);
     
     /**
      * Get all invitations of a particular employer.

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Freestaff - Skilled Migrants Solutions</title>
+<title>Freestaff - Skilled Migrant Solutions</title>
 <link type="text/css" rel="stylesheet" href="${request.contextPath}<tiles:getAsString name='css'/>">
 <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
@@ -26,7 +26,7 @@
     </div>
     <div class="wrapper">
         <h1>
-            <a href="/" id="logo">Free Staff</a>
+            <a href="/" id="logo"><img src="/res/image/freestaff_logo.png"/></a>
         </h1>
         <div class="clearFloat"></div>
     </div>
@@ -61,7 +61,7 @@
                 </a>
             </li>
             <li class="omega">
-                <a href="/about" target="_blank">
+                <a href="/about">
                     <span>
                         <span>ABOUT</span>
                     </span>
@@ -79,11 +79,9 @@
 
 <!-- footer -->
 <footer>
-    &copy; COPYRIGHT FreeStaff 2013
-    <a href="http://www.freestaff.com.au/">www.freestaff.com.au</a>
+    Freestaff &copy; 2013
     <br>
-    3D Models provided by
-    <a href="http://www.templates.com/product/3d-models/" target="_blank" rel="nofollow">www.templates.com</a>
+    <a href="/credit" target="_blank">Credit</a>
 </footer>
 <!-- end of footer -->
 </body>

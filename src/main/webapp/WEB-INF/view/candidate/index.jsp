@@ -252,7 +252,7 @@
         </div>
 
         <div id="edu_wrapper">
-            <h1>EDUCATION &amp; TRAINING</h1>
+            <h1>Education &amp; Training</h1>
             <div class="modify_row"><a href="/candidate/eduHistory">Edit</a></div>
             <div class="clearFloat"></div>
             <c:forEach var="history" items="${user.candidate.eduHistories}" varStatus="status">
@@ -285,7 +285,7 @@
         </div>
 
         <div id="interest_wrapper">
-            <h1>INTERESTS</h1>
+            <h1>Interests</h1>
             <div class="modify_row"><a href="/candidate/interests">Edit</a></div>
             <div class="clearFloat"></div>
             <p><c:out value="${user.candidate.interests}"/></p>

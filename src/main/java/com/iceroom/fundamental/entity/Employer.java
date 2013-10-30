@@ -50,7 +50,7 @@ public class Employer {
     private String statement;
     
     @OneToMany(mappedBy="employer")
-    @OrderBy("id")
+    @OrderBy("id desc")
     private Set<Invitation> invitations;
 
     /**

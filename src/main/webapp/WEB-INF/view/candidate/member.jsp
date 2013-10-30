@@ -14,13 +14,12 @@
             <div class="pay_option op1">
                 <div class="header">6 Months</div>
                 <div class="body">
-                    <div class="total">AUD $79.00</div>
-                    <div class="permon">$13.20/month</div>
+                    <img src="/res/image/79.png" width="200" height="200">
                 </div>
                 <div class="footer">
                     <script src="/res/js/paypal-button.min.js?merchant=2PJTT787LJVMY"
                         data-button="buynow"
-                        data-name="FreeStaff Membership 6 months"
+                        data-name="Freestaff Membership 6 months"
                         data-amount="79.00"
                         data-currency="AUD">
                     </script>
@@ -29,13 +28,12 @@
             <div class="pay_option op2">
                 <div class="header">12 Months</div>
                 <div class="body">
-                    <div class="total">AUD $99.00</div>
-                    <div class="permon">$8.25/month</div>
+                    <img src="/res/image/99.png" width="200" height="200">
                 </div>
                 <div class="footer">
                     <script src="/res/js/paypal-button.min.js?merchant=2PJTT787LJVMY"
                         data-button="buynow"
-                        data-name="FreeStaff Membership 12 months"
+                        data-name="Freestaff Membership 12 months"
                         data-amount="99.00"
                         data-currency="AUD">
                     </script>

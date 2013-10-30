@@ -50,7 +50,7 @@
 #pad .invi {
     margin-top: 20px;
     border: 1px solid #999;
-    padding: 5px;
+    padding: 10px;
 }
 
 #pad .invi .key, #pad .invi .value {
@@ -71,7 +71,7 @@
 
 #pad .invi .opt_bar {
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 input[type=button] {
@@ -123,8 +123,9 @@ input[type=button]:hover {
 }
 
 #btn_employer {
-    margin-top: 5px;
-    background-color: #66ccff;
+    margin-top: 0px;
+    background-color: #333;
+    color: #fff;
     margin-bottom: 5px;
     margin-left: 120px;
 }

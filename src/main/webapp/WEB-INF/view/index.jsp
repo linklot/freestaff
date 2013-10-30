@@ -10,10 +10,6 @@
         <img src="/res/image/bg_img_004.png">
     </div>
     <div class="text">
-        <span class="text1">
-            FreeStaff
-            <span>Skilled Migrant Solutions</span>
-        </span>
         <a href="/membership" class="button">Join Now</a>
     </div>
     <div class="clearFloat"></div>
@@ -72,7 +68,7 @@
                     If you are a Skilled Migrant you can <a href="/membership">become a member</a> of our site for only $8.25 a month*.
                 </p>
                 <p>
-                    If you are an Employer then <a href="/employerReg">Register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are
+                    If you are an Employer then <a href="/employerReg">register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are
                 </p>
                 <p class="center">
                     READY &amp; WILLING TO WORK!

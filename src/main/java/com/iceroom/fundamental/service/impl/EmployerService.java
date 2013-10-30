@@ -78,12 +78,15 @@ public class EmployerService implements IEmployerService {
     @Override
     @Transactional(readOnly=true)
     public List<User> searchCandidates(String keywords, String classif,
-            String subClassif) {
+            String subClassif, String birthCountry, String currCity,
+            String currCountry, int currVisaStatus, String highestQualif,
+            String qualifName, int canPayAirfare, int canPayVisaCost) {
         String hql = "from User u where u.candidate.id is not null";// Query all candidates.
         
         // Filter out candidates haven't paid.
         hql += " and u.candidate.membershipTo >= current_date()";
         
+        // Add search criteria
         if(!classif.equals("") ) {
             // Add classification as a criterion.
             hql += " and u.candidate.classif=:classif";
@@ -92,6 +95,22 @@ public class EmployerService implements IEmployerService {
             // Add sub-classification as a criterion.
             hql += " and u.candidate.subClassif=:subClassif";
         }
+        
+        if(!birthCountry.equals("")) hql += " and u.candidate.birthCountry like :birthCountry";
+        if(!currCity.equals("")) hql += " and u.candidate.currCity like :currCity";
+        if(!currCountry.equals("")) hql += " and u.candidate.currCountry like :currCountry";
+        if(currVisaStatus != 9) hql += " and u.candidate.currVisaStatus = :currVisaStatus";
+        if(!highestQualif.equals("9")) hql += " and u.candidate.highestQualif = :highestQualif";
+        if(!qualifName.equals("")) hql += " and u.candidate.qualifName like :qualifName";
+        if(canPayAirfare != 9) {
+            if(canPayAirfare == 1) hql += " and u.candidate.canPayAirfare is true";
+            else hql += " and u.candidate.canPayAirfare is false";
+        }
+        if(canPayVisaCost != 9) {
+            if(canPayVisaCost == 1) hql += " and u.candidate.canPayVisaCost is true";
+            else hql += " and u.candidate.canPayVisaCost is false";
+        }
+        
         if(!keywords.equals("")) {
             String[] keyword = keywords.split(" ");
             hql += " and (";
@@ -119,6 +138,20 @@ public class EmployerService implements IEmployerService {
         Map<String, String> kvp = new HashMap<String, String>();
         if(!classif.equals("")) kvp.put("classif", classif);
         if(!subClassif.equals("")) kvp.put("subClassif", subClassif);
+        if(!birthCountry.equals("")) kvp.put("birthCountry", "%"+ birthCountry +"%");
+        if(!currCity.equals("")) kvp.put("currCity", "%"+ currCity +"%");
+        if(!currCountry.equals("")) kvp.put("currCountry", "%"+ currCountry +"%");
+        if(currVisaStatus != 9) kvp.put("currVisaStatus", String.valueOf(currVisaStatus));
+        if(!highestQualif.equals("9")) kvp.put("highestQualif", highestQualif);
+        if(!qualifName.equals("")) kvp.put("qualifName", qualifName);
+//        if(canPayAirfare != 9) {
+//            if(canPayAirfare == 1) kvp.put("canPayAirfare", String.valueOf(true));
+//            else kvp.put("canPayAirfare", String.valueOf(false));
+//        }
+//        if(canPayVisaCost != 9) {
+//            if(canPayVisaCost == 1) kvp.put("canPayVisaCost", String.valueOf(true));
+//            else kvp.put("canPayVisaCost", String.valueOf(false));
+//        }
         if(!keywords.equals("")) {
             String[] keyword = keywords.split(" ");
             int index = 0;
@@ -152,7 +185,7 @@ public class EmployerService implements IEmployerService {
      */
     @Override
     @Transactional
-    public void createInvitation(long candId, User employer) {
+    public void createInvitation(long candId, User employer, String description) {
         Candidate candidate = userDao.getEntityById(candId).getCandidate();
         Employer _employer = userDao.getEntityById(employer.getId()).getEmployer();
         
@@ -161,6 +194,7 @@ public class EmployerService implements IEmployerService {
         invitation.setEmployer(_employer);
         invitation.setStatus(Invitation.STATUS_SENT);
         invitation.setSendDate(Calendar.getInstance());
+        invitation.setDescription(description);
         invitationDao.create(invitation);
         
         // Send a email notification to the candidate

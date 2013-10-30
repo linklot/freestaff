@@ -29,7 +29,7 @@
     margin-top: 20px;
     border: 1px solid #999;
     background: #fff;
-    padding: 15px;
+    padding: 30px;
 }
 
 #pad h2 {
@@ -57,22 +57,37 @@
 
 .key, .value {
     float: left;
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.value {
+    font-size: 14px;
+    border-bottom: 1px solid #999;
+    width: 710px;
 }
 
 .key {
-    width: 120px;
+    width: 100px;
     font-weight: bold;
+    margin-left: 30px;
+    border-bottom: 1px solid #999;
+}
+
+.noborder {
+    border: 0px;
 }
 
 .state_value {
     float: left;
 }
 
+.state_value {
+}
+
 .state_value .statement {
-    width: 760px;
-    height: 120px;
-    overflow: auto;
+    margin-top: 5px;
+    width: 710px;
     white-space: pre-wrap;
+    font-size: 14px;
 }

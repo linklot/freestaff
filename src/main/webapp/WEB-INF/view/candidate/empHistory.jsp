@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<script type="text/javascript" src="/res/js/candidate/editIelts.js"></script>
+<script type="text/javascript" src="/res/js/candidate/empHistory.js"></script>
 <div class="wrapper">
     <div id="pad">
         <h2>Edit Employment History</h2>
@@ -29,8 +29,14 @@
         <div class="row">
             <div class="key">Date Employed</div>
             <div class="value">
-                <label for="from${status.index}">From</label><input type="text" class="date" id="from${status.index}" name="empHistories[${status.index}].from" value='<c:out value="${empHistory.from}"/>'/>
-                <label for="to${status.index}">To</label><input type="text" class="date" id="to${status.index}" name="empHistories[${status.index}].to" value='<c:out value="${empHistory.to}"/>'/>
+                <label for="from${status.index}">From</label>
+                <select id='from_year_${status.index}' class="fromYear"></select>
+                <select id='from_month_${status.index}' class="fromMonth"></select>
+                <input type="hidden" id="from${status.index}" name="empHistories[${status.index}].from" value='<c:out value="${empHistory.from}"/>'/>
+                <label for="to${status.index}">To</label>
+                <select id='to_year_${status.index}' class="toYear"></select>
+                <select id='to_month_${status.index}' class="toMonth"></select>
+                <input type="hidden" id="to${status.index}" name="empHistories[${status.index}].to" value='<c:out value="${empHistory.to}"/>'/>
             </div>
             <div class="clearFloat"></div>
         </div>

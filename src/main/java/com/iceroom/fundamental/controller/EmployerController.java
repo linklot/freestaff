@@ -82,10 +82,19 @@ public class EmployerController {
     public String doSearch(@RequestParam("classif") long classifId,
             @RequestParam("sub-classif") long subClassifId,
             @RequestParam("keywords") String keywords,
+            @RequestParam("birthCountry") String birthCountry,
+            @RequestParam("currCity") String currCity,
+            @RequestParam("currCountry") String currCountry,
+            @RequestParam("currVisaStatus") int currVisaStatus,
+            @RequestParam("highestQualif") String highestQualif,
+            @RequestParam("qualifName") String qualifName,
+            @RequestParam("canPayAirfare") int canPayAirfare,
+            @RequestParam("canPayVisaCost") int canPayVisaCost,
             Model model) {
         Classif classif = null;
         
-        /* c_k for criterion keywords, c_c for criterion classification,
+        /* c_k for criterion keywords,
+         * c_c for criterion classification,
          * c_s for criterion sub-classification */
         String c_k, c_c, c_s;
         
@@ -109,7 +118,17 @@ public class EmployerController {
         model.addAttribute("c_k", c_k);
         model.addAttribute("c_c", c_c);
         model.addAttribute("c_s", c_s);
-        List<User> cands = employerService.searchCandidates(keywords, c_c, c_s);
+        model.addAttribute("birthCountry", birthCountry);
+        model.addAttribute("currCity", currCity);
+        model.addAttribute("currCountry", currCountry);
+        model.addAttribute("currVisaStatus", currVisaStatus);
+        model.addAttribute("highestQualif", highestQualif);
+        model.addAttribute("qualifName", qualifName);
+        model.addAttribute("canPayAirfare", canPayAirfare);
+        model.addAttribute("canPayVisaCost", canPayVisaCost);
+        
+        List<User> cands = employerService.searchCandidates(keywords, c_c, c_s, birthCountry, currCity, currCountry, currVisaStatus,
+                highestQualif, qualifName, canPayAirfare, canPayVisaCost);
         model.addAttribute("candidates", cands);
         User user = accountService.getCurrentUser();
         model.addAttribute("user", user);
@@ -148,8 +167,19 @@ public class EmployerController {
     
     @RequestMapping(value="candidate/{id}", method=RequestMethod.POST)
     public String sendInvitation(@PathVariable long id, Model model) {
+        return "redirect:/employer/candidate/"+ id +"/invitation";
+    }
+    
+    @RequestMapping(value="candidate/{id}/invitation", method=RequestMethod.GET)
+    public String showInvitationDescription(@PathVariable long id) {
+        return "invitationDescription";
+    }
+    
+    @RequestMapping(value="candidate/{id}/invitation", method=RequestMethod.POST)
+    public String saveInvitation(@PathVariable long id, @RequestParam("description") String description,
+            Model model) {
         User user = accountService.getCurrentUser();
-        employerService.createInvitation(id, user);
+        employerService.createInvitation(id, user, description);
         List<Invitation> invitations = employerService.getInvitationsOfEmployer(user);
         model.addAttribute("user", user);
         model.addAttribute("invitations", invitations);

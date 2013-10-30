@@ -49,6 +49,15 @@
     float: left;
 }
 
+#ielts_wrapper .row .cross_cell {
+    width: 200px;
+    font-weight: bold;
+}
+
+#ielts_wrapper .key {
+    width: 60px;
+}
+
 #ielts_wrapper .value {
     margin-left: 15px;
 }
