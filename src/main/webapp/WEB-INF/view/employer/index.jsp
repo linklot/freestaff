@@ -9,14 +9,23 @@
         </header>
         <div class="module_content">
             <div class="row">
-                <div class="key">Candidates: <c:out value="${candidateCount}"/></div>
-                <div class="value"><a href="/employer/search">Search Candidates</a></div>
-            </div>
-            <div class="row">
-                <div class="key">Invitations: <c:out value="${invitationCount}"/></div>
-                <div class="value"><a href="/employer/invitations">Check</a></div>
+                <div class="text">
+                    Candidates: <span class="highlight"><c:out value="${cand_stat[0]}"/></span>
+                    <span class="indent">Activated Candidates: <span class="highlight"><c:out value="${cand_stat[1]}"/></span></span>
+                </div>
             </div>
             <div class="clear"></div>
+            <div class="row">
+                <div class="text"><a href="/employer/search">Search Candidates</a></div>
+            </div>
+            <div class="sepration"></div>
+            <div class="row">
+                <div class="text">Invitations: <span class="highlight"><c:out value="${invitationCount}"/></span></div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+                <div class="text"><a href="/employer/invitations">Check</a></div>
+            </div>
         </div>
     </article>
 </section>

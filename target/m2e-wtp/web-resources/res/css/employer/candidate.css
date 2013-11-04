@@ -19,7 +19,7 @@
 
 #classif_wrapper {
     float: left;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .row {
@@ -41,7 +41,7 @@
 }
 
 #classif_wrapper .key {
-    width: 220px;
+    width: 205px;
 }
 
 #ielts_wrapper {
@@ -188,4 +188,8 @@ header .head_btn {
 
 input[type="submit"] {
     font-size: 14px;
+}
+
+#edu_wrapper .row .key {
+    width: 130px;
 }

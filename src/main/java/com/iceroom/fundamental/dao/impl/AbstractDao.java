@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.iceroom.fundamental.dao.impl;
 
 import java.io.Serializable;

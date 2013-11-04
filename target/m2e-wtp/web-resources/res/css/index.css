@@ -39,6 +39,11 @@
 .box h2 {padding:10px 0 16px 0}
 
 .pad {padding:0 30px 0 35px}
+.pad p {
+    padding: 10px 0 0 0;
+    margin: 0px;
+    line-height: 18px;
+}
 .pad_left1 {padding-left:55px}
 .pad_left2 {padding-left:45px}
 .marg_right1 {margin-right:12px}
@@ -61,7 +66,7 @@
     margin-top: -15px;
 }
 .banners p.font1 {font-size: 14px; font-weight:bold;color:#318ea2;}
-.banners .marker {background:url(/res/image/marker_1.gif) no-repeat}
+.banners .marker {background:url(/res/image/marker_1.gif) no-repeat; margin-top: 5px;}
 .banners .marker:hover {background:url(/res/image/marker_3.gif) no-repeat}
 .banners .pad {padding:0px}
 .marker {display:inline-block;background:url(/res/image/marker_3.gif) no-repeat;width:17px;height:17px;}

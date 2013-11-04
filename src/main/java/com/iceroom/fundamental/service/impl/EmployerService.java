@@ -289,6 +289,20 @@ public class EmployerService implements IEmployerService {
     }
 
     /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmployerService#getCandidateStat()
+     */
+    @Override
+    @Transactional(readOnly=true)
+    public Integer[] getCandidateStat() {
+        String hql = "from Candidate c";
+        int cand_count = candidateDao.findByHql(hql).size();
+        hql = "from Candidate c where c.membershipTo >= current_date()";
+        int act_cand_count = candidateDao.findByHql(hql).size();
+        Integer[] array = new Integer[] {cand_count, act_cand_count};
+        return array;
+    }
+
+    /* (non-Javadoc)
      * @see com.iceroom.fundamental.service.IEmployerService#getInvitationCount(long)
      */
     @Override

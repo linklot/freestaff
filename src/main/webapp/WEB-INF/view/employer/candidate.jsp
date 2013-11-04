@@ -10,7 +10,8 @@
         </header>
         <div class="module_content">
             <div id="avatar_wrapper">
-                <img src='<c:out value="${cand.candidate.picUrl}"/>' id="photo"/>
+                <c:if test="${!empty cand.candidate.picUrl}"><img src='<c:out value="${cand.candidate.picUrl}"/>' id="photo" alt="Photo"/></c:if>
+                <c:if test="${empty cand.candidate.picUrl}"><img src='/res/image/default_avatar.png' id="photo" alt="Photo"/></c:if>
                 <div class="clear"></div>
                 <span>
                     <c:out value="${cand.candidate.firstName}"/>
@@ -165,7 +166,7 @@
             </div>
             <div class="clear"></div>
             <div class="video">
-                <c:if test="${not empty cand.candidate.videoUrl}">
+                <c:if test="${!empty cand.candidate.videoUrl}">
                     <iframe id="ytplayer" type="text/html" width="640" height="360" src='https://www.youtube.com/embed/<c:out value="${cand.candidate.videoUrl}"/>' frameborder="0" allowfullscreen></iframe>
                 </c:if>
             </div>

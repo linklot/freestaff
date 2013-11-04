@@ -167,8 +167,24 @@
       <version>1.3.1</version>
     </dependency>
     
+    <dependency>
+      <groupId>com.mortennobel</groupId>
+      <artifactId>java-image-scaling</artifactId>
+      <version>0.8.5</version>
+    </dependency>
+    
   </dependencies>
   <build>
-    <finalName>FreeStaff</finalName>
+    <finalName>FreeStaff</finalName>  
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

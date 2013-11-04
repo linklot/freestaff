@@ -49,8 +49,10 @@ public class EmployerController {
     public String showIndex(Model model) {
         User user = accountService.getCurrentUser();
         model.addAttribute("user", user);
-        int candidateCount = employerService.getCandidateCount();
-        model.addAttribute("candidateCount", candidateCount);
+//        int candidateCount = employerService.getCandidateCount();
+//        model.addAttribute("candidateCount", candidateCount);
+        Integer[] stat = employerService.getCandidateStat();
+        model.addAttribute("cand_stat", stat);
         int invitationCount = employerService.getInvitationCount(user.getEmployer().getId());
         model.addAttribute("invitationCount", invitationCount);
         return "employerIndex";
@@ -157,6 +159,9 @@ public class EmployerController {
     public String showCandidate(@PathVariable long id,
             Model model) {
         User candidate = employerService.getCandidate(id);
+        if(candidate.getCandidate().getPicUrl() == "") {
+            candidate.getCandidate().setPicUrl("/res/image/default_avatar.png");
+        }
         model.addAttribute("cand", candidate);
         User employer = accountService.getCurrentUser();
         model.addAttribute("user", employer);
@@ -226,7 +231,7 @@ public class EmployerController {
                 response.flushBuffer();
             }
         } catch(Exception ex) {
-            ex.printStackTrace();
+//            ex.printStackTrace();
         }
     }
     

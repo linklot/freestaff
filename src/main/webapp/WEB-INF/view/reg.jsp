@@ -5,7 +5,7 @@
 
 <section id="content">
     <form:form method="post" id="reg_form">
-    <div id="title">To join FreeStaff, sign up below...</div>
+    <div id="title">To join Freestaff, sign up below...</div>
     <div id="note"><span class="significant">NOTE:</span> FREESTAFF IS FOR SKILLED MIGRANTS (NON CITIZENS) ONLY. PLEASE CONFIRM YOU ARE NOT A CITIZEN OF AUSTRALIA.</div>
     <div class="row">
         <div class="label">First Name:</div>

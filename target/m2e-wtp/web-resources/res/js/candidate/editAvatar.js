@@ -61,15 +61,7 @@ function ajaxGetAvatar() {
         type: 'GET',
         url: '/candidate/avatar/' + cid,
         success: function(data) {
-            var photo = new Image();
-            photo.src = data;
-            var width = photo.width;
-            var height = photo.height;
-            if(width > 200) {
-                target.html('<img id="photo" src="'+ data +'" width="200"/>');
-            } else if(height > 200) {
-                target.html('<img id="photo" src="'+ data +'" height="200"/>');
-            } else target.html('<img id="photo" src="'+ data +'"/>');
+            target.html('<img id="photo" src="'+ data +'"/>');
         },
         error: function() { alert('fail'); }
     });

@@ -48,6 +48,11 @@
         <put-attribute name="css" value="/res/css/post.css"/>
     </definition>
     
+    <definition name="visaadvice" extends="template">
+        <put-attribute name="content" value="/WEB-INF/view/visaadvice.jsp" />
+        <put-attribute name="css" value="/res/css/visaadvice.css"/>
+    </definition>
+    
     <definition name="error404" extends="template">
         <put-attribute name="content" value="/WEB-INF/view/error404.jsp" />
         <put-attribute name="css" value="/res/css/404.css"/>

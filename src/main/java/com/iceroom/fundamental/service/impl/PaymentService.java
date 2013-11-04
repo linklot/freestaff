@@ -18,9 +18,9 @@ import com.iceroom.fundamental.service.IPaymentService;
  */
 public class PaymentService implements IPaymentService {
     
-    private final String MONTH_3 = "FreeStaff Membership 3 months";
-    private final String MONTH_6 = "FreeStaff Membership 6 months";
-    private final String MONTH_12 = "FreeStaff Membership 12 months";
+    private final String MONTH_3 = "Freestaff Membership 3 months";
+    private final String MONTH_6 = "Freestaff Membership 6 months";
+    private final String MONTH_12 = "Freestaff Membership 12 months";
     
     private IUserDao userDao;
     private ICandidateDao candidateDao;

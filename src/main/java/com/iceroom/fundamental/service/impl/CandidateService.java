@@ -1,12 +1,14 @@
-/**
- * 
- */
 package com.iceroom.fundamental.service.impl;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +31,7 @@ import com.iceroom.fundamental.entity.User;
 import com.iceroom.fundamental.service.IAccountService;
 import com.iceroom.fundamental.service.ICandidateService;
 import com.iceroom.fundamental.util.StringUtil;
+import com.mortennobel.imagescaling.ResampleOp;
 
 /**
  * @author Lincoln
@@ -53,13 +56,44 @@ public class CandidateService implements ICandidateService {
      */
     @Override
     @Transactional
-    public void updateAvatar(long id, MultipartFile image) throws Exception {
+    public void updateAvatar(long id, MultipartFile upFile) throws Exception {
         /* Save the file to the path */
-        String ori_name = image.getOriginalFilename();
+        String ori_name = upFile.getOriginalFilename();
         String extName = StringUtil.getExtName(ori_name);
+        extName = extName.toLowerCase();
         String fileName = id + "." + extName;
         File file = new File(avatarPath + fileName);
-        FileUtils.writeByteArrayToFile(file, image.getBytes());
+        byte[] fileArray = upFile.getBytes();
+        
+        // To scale the image
+        BufferedImage ori_image = ImageIO.read(new ByteArrayInputStream(upFile.getBytes()));
+        int width = ori_image.getWidth();
+        int height = ori_image.getHeight();
+        
+        if(width > 200) {
+            height = height * 200 / width;
+            width = 200;
+            ResampleOp  resampleOp = new ResampleOp(width, height);
+            BufferedImage new_image = resampleOp.filter(ori_image, null);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write(new_image, extName, baos);
+            baos.flush();
+            fileArray = baos.toByteArray();
+            baos.close();
+        } else if(height > 200) {
+            width = width * 200 / height;
+            height = 200;
+            ResampleOp  resampleOp = new ResampleOp(width, height);
+            BufferedImage new_image = resampleOp.filter(ori_image, null);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write(new_image, extName, baos);
+            baos.flush();
+            fileArray = baos.toByteArray();
+            baos.close();
+        }
+        
+        /* Write the file to the hard disk */
+        FileUtils.writeByteArrayToFile(file, fileArray);
         
         /* Update associated Candidate entity */
         User user = userDao.getEntityById(id);

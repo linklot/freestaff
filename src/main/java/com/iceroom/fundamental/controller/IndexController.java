@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.iceroom.fundamental.entity.Classif;
 import com.iceroom.fundamental.entity.EmployerApplication;
@@ -144,7 +146,7 @@ public class IndexController {
     @RequestMapping(value="/visaadvice", method=RequestMethod.GET)
     public String showVisaAdvice(Model model) {
         model.addAttribute("post", generalService.getPostVisaAdvice());
-        return "post";
+        return "visaadvice";
     }
     
     @RequestMapping(value="/farmwork", method=RequestMethod.GET)
@@ -192,6 +194,17 @@ public class IndexController {
         accountService.saveEmployerApplication(app);
         model.addAttribute("msg", "added");
         return "employerReg";
+    }
+    
+    @RequestMapping(value="/ajaxVisaAdvice", method=RequestMethod.POST)
+    @ResponseStatus(value=HttpStatus.OK)
+    public void ajaxVisaAdvice(@RequestParam(value="f_name", required=true) String fName,
+            @RequestParam(value="l_name", required=true) String lName,
+            @RequestParam(value="phone", required=true) String phone,
+            @RequestParam(value="email", required=true) String email,
+            @RequestParam(value="visa_type", required=true) int visaType,
+            @RequestParam(value="ref_code", required=true) String refCode) {
+        emailService.sendVisaAdviceEmail(fName, lName, phone, email, visaType, refCode);
     }
 
     /**

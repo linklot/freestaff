@@ -28,13 +28,6 @@ $(document).ready(function() {
     $('#btn_signout').click(function() {
         window.location.href = '/j_spring_security_logout';
     });
-
-    var img = new Image();
-    img.src = $('#photo_img').attr('src');
-    var width = img.width;
-    var height = img.height;
-    if(width > 200)  $('#photo_img').attr('width', '200');
-    else if(height > 200) $('#photo_img').attr('height', '200');
 });
 
 function initPhotoBehav() {

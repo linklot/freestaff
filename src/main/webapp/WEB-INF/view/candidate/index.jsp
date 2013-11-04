@@ -13,7 +13,7 @@
             <div class="clearFloat"></div>
             <div id="photo_wrapper">
                 <div id="photo">
-                    <img id="photo_img" src='<c:out value="${user.candidate.picUrl}"/>'/>
+                    <c:if test="${!empty user.candidate.picUrl}"><img id="photo_img" src='<c:out value="${user.candidate.picUrl}"/>'/></c:if>
                     <div class="photo_edit_prompt">upload your photo</div>
                 </div>
                 <div id="number">Reg ID: <c:out value="${user.account}"/></div>

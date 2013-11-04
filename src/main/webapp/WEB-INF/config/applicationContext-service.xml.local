@@ -75,9 +75,10 @@
     
     <bean id="iEmailService"
         class="com.iceroom.fundamental.service.impl.EmailService"
-        p:sender="no-reply@newad.com.au"
+        p:sender="no-reply@freestaff.com.au"
         p:password="111111"
-        p:smtp="mail.newad.com.au"
+        p:smtp="mail.freestaff.com.au"
+        p:visaAdviceEmail="worldwidevisas@freestaff.com.au"
     />
     
 </beans>

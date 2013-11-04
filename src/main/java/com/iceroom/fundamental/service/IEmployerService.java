@@ -103,6 +103,14 @@ public interface IEmployerService {
     int getCandidateCount();
     
     /**
+     * Get statistics of candidates, including:<ul>
+     * <li>the number of candidates</li><li>the number of activited candidates</li>
+     * </ul>
+     * @return
+     */
+    Integer[] getCandidateStat();
+    
+    /**
      * Get the count of all invitations sent by the employer.
      * @return int
      */

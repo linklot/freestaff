@@ -9,7 +9,10 @@
         <div class="module_content">
             <c:forEach var="invi" items="${invitations}">
             <div class="invi">
-                <div class="avatar"><img src="${invi.candidate.picUrl}" class="img"/></div>
+                <div class="avatar">
+                    <c:if test="${!empty invi.candidate.picUrl}"><img src="${invi.candidate.picUrl}" alt="Photo" class="img"/></c:if>
+                    <c:if test="${empty invi.candidate.picUrl}"><img src="/res/image/default_avatar.png" width="200" height="200" alt="Photo" class="img"/></c:if>
+                </div>
                 <div class="cand">
                     <div class="row">
                         <div class="key">Candidate Name</div>

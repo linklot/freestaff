@@ -29,4 +29,16 @@ public interface IEmailService {
      */
     void sendResetPasswordEmail(String account, String email, String newPWD);
     
+    /**
+     * To send an email to the particualr visa advice email address.
+     * @param fName First name.
+     * @param lName Last name.
+     * @param phone Phone number.
+     * @param email Email address.
+     * @param visaType The visa type.
+     * @param refCode The referal code.
+     */
+    void sendVisaAdviceEmail(String fName, String lName, String phone, String email,
+            int visaType, String refCode);
+    
 }

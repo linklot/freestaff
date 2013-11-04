@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-    
+
+<!-- Current working configuration -->
     <http use-expressions="true">
         <form-login login-page="/login" authentication-failure-url="/login/err"/>
         <http-basic />
@@ -17,37 +18,37 @@
         <intercept-url pattern="/employer/**" access="hasRole('ROLE_EMPLOYER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/**" access="permitAll" />
     </http>
+<!-- end -->
     
-<!--    <http pattern="/admin/**" use-expressions="true">
-        <form-login login-page="/adminLogin" authentication-failure-url="/login/err"/>
+<!-- Support multiple log-in form --><!--
+    <http pattern="/admin/**" use-expressions="true">
+        <form-login login-page="/login" authentication-failure-url="/login/err"/>
         <http-basic />
         <logout />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+        <intercept-url pattern="/**" access="permitAll" />
     </http>
-    
     <http pattern="/candidate/**" use-expressions="true">
         <form-login login-page="/login" authentication-failure-url="/login/err"/>
         <http-basic />
         <logout />
-        <intercept-url pattern="/candidate/**" access="hasRole('ROLE_CANDIDATE') or hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+        <intercept-url pattern="/candidate/**" access="hasRole('ROLE_CANDIDATE')" />
+        <intercept-url pattern="/**" access="permitAll" />
     </http>
-    
     <http pattern="/employer/**" use-expressions="true">
-        <form-login login-page="/employerLogin" authentication-failure-url="/login/err"/>
+        <form-login login-page="/login" authentication-failure-url="/login/err"/>
         <http-basic />
         <logout />
-        <intercept-url pattern="/employer/**" access="hasRole('ROLE_EMPLOYER') or hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+        <intercept-url pattern="/employer/**" access="hasRole('ROLE_EMPLOYER')" />
+        <intercept-url pattern="/**" access="permitAll" />
     </http>
-    
     <http pattern="/**" use-expressions="true">
         <http-basic />
         <logout />
         <intercept-url pattern="/**" access="permitAll" />
     </http>-->
-    
+<!-- End of Support multiple log-in form -->
+
     <authentication-manager>
         <authentication-provider user-service-ref="userDetailsService">
             <password-encoder hash="sha">

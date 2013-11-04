@@ -64,18 +64,62 @@ section ul li {
 }
 
 .btn_join {
-    background: url(/res/image/template/btn_submit.png) repeat-x;
-    border: 1px solid #A8A9A8;
-    height: 24px;
-    border-radius: 5px;
-    padding: 0 10px;
-    color: #333;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
+    display:inline-block;
+    height: 40px;
+    font-size:20px;
+    font-weight:700;
+    color:#fff;
+    line-height:53px;
+    padding:0 37px;
+    background:url(/res/image/button_bg.gif) top repeat-x #308da2;
+    border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
+    position:relative;
+    text-decoration:none;
 }
 
 .btn_join:hover {
-    background: url(/res/image/template/btn_submit_2.png) repeat-x;
-    color: #333333;
+    background:#696969;
+    cursor: pointer;
+}
+
+.logo_wrapper, .form_wrapper {
+    float: left;
+}
+
+.logo_wrapper {
+    margin-left: 60px;
+}
+
+.form_wrapper {
+    margin-left: 20px;
+    margin-top: 5px;
+    background-color: #333;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 210px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.form_wrapper .title {
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.form_wrapper .body_wrapper {
+    background-color: #f4f4f4;
+}
+
+.form_wrapper .row {
+    clear: left;
+}
+
+.form_wrapper .row .key, .form_wrapper .row .value {
+    float: left;
+    height: 30px;
 }

@@ -17,6 +17,7 @@ public class EmailService implements IEmailService {
     private String sender;// The sender's email
     private String password;// The sender's password
     private String smtp;// The smtp server's domain name
+    private String visaAdviceEmail;// The email address used to receive visa advice emails.
 
     @Override
     public void testSendMail() {
@@ -109,6 +110,79 @@ public class EmailService implements IEmailService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmailService#sendVisaAdviceEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String)
+     */
+    @Override
+    public void sendVisaAdviceEmail(String fName, String lName, String phone,
+            String email, int visaType, String refCode) {
+        String visa_type = "";
+        switch(visaType) {
+            case 0:
+                visa_type = "Work/Employer Sponsorship Visa";
+                break;
+            case 1:
+                visa_type = "State Regional Sponsorship Visa";
+                break;
+            case 2:
+                visa_type = "Skilled Migrant Visa";
+                break;
+            case 3:
+                visa_type = "Working Holiday Visa<";
+                break;
+            case 4:
+                visa_type = "Farm Work Visa";
+                break;
+            case 5:
+                visa_type = "Student Visa";
+                break;
+            case 6:
+                visa_type = "Travel/Visitors Visa";
+                break;
+            case 7:
+                visa_type = "Family / Spouse / Partner Visa";
+                break;
+            case 8:
+                visa_type = "Retirement Visa";
+                break;
+            case 9:
+                visa_type = "Business Visa";
+                break;
+            case 10:
+                visa_type = "Permanent/Temporary Residency";
+                break;
+            case 11:
+                visa_type = "Other Visas";
+                break;
+            default:
+                visa_type = "Unknown";
+                break;
+        }
+        try {
+            HtmlEmail _email = new HtmlEmail();
+            _email.setHostName(smtp);
+            _email.setSmtpPort(25);
+            _email.setAuthenticator(new DefaultAuthenticator(sender, password));
+            _email.addTo(visaAdviceEmail, "World-wide Visa");
+            _email.setFrom(sender, "FreeStaff");
+            _email.setSubject("Visa Advice Form");
+            String htmlMsg = "<html>This is a visa advice request form.<br/><br/>";
+            htmlMsg += "///----------------------------<br/>";
+            htmlMsg += "<strong>First Name:</strong> " + fName + "<br/>";
+            htmlMsg += "<strong>Last Name:</strong> " + lName + "<br/>";
+            htmlMsg += "<strong>Phone:</strong> " + phone + "<br/>";
+            htmlMsg += "<strong>Email:</strong> " + email + "<br/>";
+            htmlMsg += "<strong>Visa Type:</strong> " + visa_type + "<br/>";
+            htmlMsg += "<strong>Referral Code:</strong> " + refCode + "<br/>";
+            htmlMsg += "///----------------------------";
+            htmlMsg += "</html>";
+            _email.setHtmlMsg(htmlMsg);
+            _email.send();
+        } catch(Exception ex) {
+            // Sending email fails
+        }
+    }
+
     /**
      * @param sender the sender to set
      */
@@ -128,6 +202,13 @@ public class EmailService implements IEmailService {
      */
     public void setSmtp(String smtp) {
         this.smtp = smtp;
+    }
+
+    /**
+     * @param visaAdviceEmail the visaAdviceEmail to set
+     */
+    public void setVisaAdviceEmail(String visaAdviceEmail) {
+        this.visaAdviceEmail = visaAdviceEmail;
     }
     
 }

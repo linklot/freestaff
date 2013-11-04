@@ -11,15 +11,6 @@ $(document).ready(function() {
     $('.btn_cand').click(function() {
         cand_prof($(this).data('id'));
     })
-
-    $('.img').each(function() {
-        var photo = new Image();
-        photo.src = $(this).attr('src');
-        var width = photo.width;
-        var height = photo.height;
-        if(width > 200) $(this).attr('width', '200');
-        else if(height > 200) $(this).attr('height', '200');
-    });
 });
 
 function withdraw(id) {

@@ -21,7 +21,9 @@
                         data-button="buynow"
                         data-name="Freestaff Membership 6 months"
                         data-amount="79.00"
-                        data-currency="AUD">
+                        data-currency="AUD"
+                        data-callback="http://www.freestaff.com.au/paypalListener?cid=<c:out value="${user.id}"/>"
+                    >
                     </script>
                 </div>
             </div>
@@ -35,7 +37,9 @@
                         data-button="buynow"
                         data-name="Freestaff Membership 12 months"
                         data-amount="99.00"
-                        data-currency="AUD">
+                        data-currency="AUD"
+                        data-callback="http://www.freestaff.com.au/paypalListener?cid=<c:out value="${user.id}"/>"
+                    >
                     </script>
                 </div>
             </div>

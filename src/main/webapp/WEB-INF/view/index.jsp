@@ -23,7 +23,7 @@
                     <img src="/res/image/page1_img1.jpg" alt=""></a>
                 <div class="pad">
                     <p class="font1">Membership</p>
-                    <p>Join Freestaff so that Employers of Skilled Migrants can find you.</p>
+                    <p>Join Freestaff so that Employers who offer visa sponsorship can find you.</p>
                     <a href="/membership" class="marker"></a>
                 </div>
             </li>
@@ -46,12 +46,12 @@
                 </div>
             </li>
             <li>
-                <a href="http://freestaff.com.au/blog/" target="_blank">
+                <a href="http://blog.freestaff.com.au" target="_blank">
                     <img src="/res/image/page1_img4.jpg" alt="Blog" title="Blog"></a>
                 <div class="pad">
                     <p class="font1">Blog</p>
                     <p>Check out our articles on Skilled Migrant work in Australia.</p>
-                    <a href="http://freestaff.com.au/blog/" class="marker" target="_blank"></a>
+                    <a href="http://blog.freestaff.com.au" class="marker" target="_blank"></a>
                 </div>
             </li>
         </ul>
@@ -65,7 +65,7 @@
                     Freestaff was created so that Employers in Australia can easily search and find Skilled Migrant workers for their jobs.
                 </p>
                 <p>
-                    If you are a Skilled Migrant you can <a href="/membership">become a member</a> of our site for only $8.25 a month*.
+                    If you are a Skilled Migrant you can <a href="/reg">register for FREE</a> and <a href="/membership">become a member</a> of our site for only $8.25 a month*.
                 </p>
                 <p>
                     If you are an Employer then <a href="/employerReg">register for FREE</a> to search thousands of Skilled Migrants located in Australia and Overseas who are

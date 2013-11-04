@@ -1,14 +1,23 @@
 @import url(employer_global.css);
 
-.module_content .row {
-    clear: left;
+.module_content .row .text {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
 }
 
-.module_content .row .key, .module_content .row .value {
-    height: 30px;
-    float: left;
+.module_content .row .text .indent {
+    margin-left: 20px;
 }
 
-.module_content .row .key {
-    width: 120px;
+.module_content .row .text .highlight {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.module_content .sepration {
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
