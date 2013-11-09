@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -205,6 +207,13 @@ public class IndexController {
             @RequestParam(value="visa_type", required=true) int visaType,
             @RequestParam(value="ref_code", required=true) String refCode) {
         emailService.sendVisaAdviceEmail(fName, lName, phone, email, visaType, refCode);
+    }
+    
+    @RequestMapping(value="/emailTest", method=RequestMethod.GET)
+    @ResponseStatus(value=HttpStatus.OK)
+    public void emailTest(HttpServletRequest request) {
+        ServletContext context = request.getSession().getServletContext();
+        emailService.testSendMail(context);
     }
 
     /**

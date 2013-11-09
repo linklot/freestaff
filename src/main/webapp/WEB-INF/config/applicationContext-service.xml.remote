@@ -2,12 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:task="http://www.springframework.org/schema/task"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
-    
-    <task:annotation-driven />
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
     
     <bean id="iAccountService"
         class="com.iceroom.fundamental.service.impl.AccountService"
@@ -79,18 +75,9 @@
     
     <bean id="iEmailService"
         class="com.iceroom.fundamental.service.impl.EmailService"
-        p:preDefinedEmailLocation="/home/freesta/appservers/apache-tomcat-7.0.42/webapps/ROOT/WEB-INF/config/emails"
-        p:sender="no-reply@freestaff.com.au"
+        p:sender="no-reply@newad.com.au"
         p:password="111111"
-        p:smtp="mail.freestaff.com.au"
-        p:visaAdviceEmail="worldwidevisas@freestaff.com.au"
-    />
-    
-    <bean id="iScheduledTaskService"
-        class="com.iceroom.fundamental.service.impl.ScheduledTaskService"
-        p:candidateDao-ref="iCandidateDao"
-        p:membershipPromptDao-ref="iMembershipPromptDao"
-        p:emailService-ref="iEmailService"
+        p:smtp="mail.newad.com.au"
     />
     
 </beans>

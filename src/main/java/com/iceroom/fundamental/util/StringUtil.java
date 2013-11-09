@@ -112,4 +112,18 @@ public class StringUtil {
         return pieces[0];
     }
     
+    /**
+     * Change the first letter of a string to upper case.
+     * @param name The name string.
+     * @return A string
+     */
+    public static String formatFirstName(String name) {
+        if(name == null) return "";
+        else {
+            String _1st = name.substring(0, 1);
+            name = _1st.toUpperCase() + name.substring(1);
+            return name;
+        }
+    }
+    
 }

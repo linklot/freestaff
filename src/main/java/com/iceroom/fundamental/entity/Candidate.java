@@ -162,6 +162,10 @@ public class Candidate {
     @OneToMany(mappedBy="candidate")
     @OrderBy("id")
     private Set<PaymentHistory> paymentHistories;
+    
+    @OneToMany(mappedBy="candidate")
+    @OrderBy("id desc")
+    private Set<MembershipPrompt> membershipPrompts;
 
     /**
      * @return the id
@@ -807,6 +811,20 @@ public class Candidate {
         }
     }
     
+    /**
+     * @return the membershipPrompts
+     */
+    public Set<MembershipPrompt> getMembershipPrompts() {
+        return membershipPrompts;
+    }
+
+    /**
+     * @param membershipPrompts the membershipPrompts to set
+     */
+    public void setMembershipPrompts(Set<MembershipPrompt> membershipPrompts) {
+        this.membershipPrompts = membershipPrompts;
+    }
+
     public String getFriendlyMembershipFrom() {
         if(this.membershipFrom != null) {
             return StringUtil.getFriendlyDate(this.membershipFrom);

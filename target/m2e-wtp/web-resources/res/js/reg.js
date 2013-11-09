@@ -10,6 +10,9 @@ $(document).ready(function() {
 
     form.submit(function(event) {
         if(!checkForm()) event.preventDefault();
+        else {
+            $('#btnSubmit').prop('disabled', true);
+        }
     });
 });
 

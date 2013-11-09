@@ -4,10 +4,10 @@
     <div class="cycle-slideshow"
         data-cycle-pause-on-hover="true"
         data-cycle-speed="3000">
-        <img src="/res/image/bg_img_001.png">
         <img src="/res/image/bg_img_002.png">
         <img src="/res/image/bg_img_003.png">
         <img src="/res/image/bg_img_004.png">
+        <img src="/res/image/bg_img_001.png">
     </div>
     <div class="text">
         <a href="/membership" class="button">Join Now</a>

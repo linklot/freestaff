@@ -1,12 +1,17 @@
-/**
- * 
- */
 package com.iceroom.fundamental.service.impl;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.servlet.ServletContext;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.HtmlEmail;
 
 import com.iceroom.fundamental.service.IEmailService;
+import com.iceroom.fundamental.util.StringUtil;
 
 /**
  * @author Lincoln
@@ -18,20 +23,29 @@ public class EmailService implements IEmailService {
     private String password;// The sender's password
     private String smtp;// The smtp server's domain name
     private String visaAdviceEmail;// The email address used to receive visa advice emails.
+    private String preDefinedEmailLocation;// The path that stores all pre-defined email files.
+    private static Set<String> sent_list;
+    private String tmplMembershipNoti = "";
+
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmailService#clearSentList()
+     */
+    @Override
+    public void clearSentList() {
+        if(sent_list != null) sent_list.clear();
+    }
 
     @Override
-    public void testSendMail() {
+    public void testSendMail(ServletContext context) {
         try {
-            HtmlEmail email = new HtmlEmail();
-            email.setHostName(smtp);
-            email.setSmtpPort(25);
-            email.setAuthenticator(new DefaultAuthenticator(sender, password));
-            email.addTo("linklot@gmail.com", "Lincoln Li");
-            email.setFrom(sender, "FreeStaff Notification");
-            email.setSubject("Test Email!");
-            email.setHtmlMsg("<html><strong>Something</strong></html>");
-            email.setTextMsg("Something");
-            email.send();
+            String realPath = context.getRealPath(".");
+            BufferedReader br = new BufferedReader(new FileReader(realPath + preDefinedEmailLocation + "/invitation.html"));
+            String line = br.readLine();
+            while(line != null) {
+                System.out.println(line);
+                line = br.readLine();
+            }
+            br.close();
         } catch(Exception ex) {
             ex.printStackTrace();
         }
@@ -48,7 +62,7 @@ public class EmailService implements IEmailService {
             email.setSmtpPort(25);
             email.setAuthenticator(new DefaultAuthenticator(sender, password));
             email.addTo(candidate_email, "Candidate");
-            email.setFrom(sender, "Freestaff Invitation Notification");
+            email.setFrom(sender, "Freestaff");
             email.setSubject("Invitation Notification");
             String htmlMsg = "<html><strong>Congratulations! An Australian Employer is keen to discuss a job opportunity with you! </strong>";
             htmlMsg += "<br/><br/>Please <a href='http://www.freestaff.com.au' target='_blank'>log in</a> to your Freestaff Account to view.";
@@ -183,6 +197,79 @@ public class EmailService implements IEmailService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see com.iceroom.fundamental.service.IEmailService#sendPromptEmail(java.lang.String, java.lang.String)
+     */
+    @Override
+    public void sendPromptEmail(String to, String firstName) {
+        firstName = StringUtil.formatFirstName(firstName);
+        if(sent_list == null) sent_list = new HashSet<String>();
+        if(sent_list.isEmpty()) {
+            // Send mail
+            this.doSendPromptEmail(to, firstName);
+            sent_list.add(to);
+        } else {
+            boolean sent = false;
+            for(String receiver : sent_list) {
+                if(receiver.equals(to)) {
+                    sent = !sent;
+                    break;
+                }
+            }
+            if(!sent) {
+                // Send mail
+                this.doSendPromptEmail(to, firstName);
+                sent_list.add(to);
+            }
+        }
+    }
+    
+    /**
+     * Execute the sending-prompt-email action.
+     * @param to The receiver's email
+     * @param firstName The receiver's first name.
+     */
+    private void doSendPromptEmail(String to, String firstName) {
+        try {
+            if(tmplMembershipNoti.equals("")) tmplMembershipNoti = readMailTemplate("membershipNotification.html");
+            String mailContent = String.format(tmplMembershipNoti, firstName);
+            HtmlEmail _email = new HtmlEmail();
+            _email.setHostName(smtp);
+            _email.setSmtpPort(25);
+            _email.setAuthenticator(new DefaultAuthenticator(sender, password));
+            _email.addTo(to, "FreeStaff User");
+            _email.setFrom(sender, "FreeStaff");
+            _email.setSubject("Freestaff - Membership Notification");
+            _email.setHtmlMsg(mailContent);
+            _email.send();
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    /**
+     * Read a email template.
+     * @param fileName The file name.
+     * @return String
+     */
+    private String readMailTemplate(String fileName) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(preDefinedEmailLocation+ "/" +fileName));
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while(line != null) {
+                sb.append(line);
+                sb.append('\n');
+                line = br.readLine();
+            }
+            br.close();
+            return sb.toString();
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            return "";
+        }
+    }
+
     /**
      * @param sender the sender to set
      */
@@ -209,6 +296,13 @@ public class EmailService implements IEmailService {
      */
     public void setVisaAdviceEmail(String visaAdviceEmail) {
         this.visaAdviceEmail = visaAdviceEmail;
+    }
+
+    /**
+     * @param preDefineEmailLocation the preDefineEmailLocation to set
+     */
+    public void setPreDefinedEmailLocation(String preDefinedEmailLocation) {
+        this.preDefinedEmailLocation = preDefinedEmailLocation;
     }
     
 }

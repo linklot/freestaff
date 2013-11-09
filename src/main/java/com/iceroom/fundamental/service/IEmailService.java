@@ -1,12 +1,16 @@
 package com.iceroom.fundamental.service;
 
+import javax.servlet.ServletContext;
+
 /**
  * @author Lincoln
  *
  */
 public interface IEmailService {
     
-    void testSendMail();
+    void clearSentList();
+    
+    void testSendMail(ServletContext context);
     
     /**
      * Send an email to notify the candidate about the invitation.
@@ -40,5 +44,12 @@ public interface IEmailService {
      */
     void sendVisaAdviceEmail(String fName, String lName, String phone, String email,
             int visaType, String refCode);
+    
+    /**
+     * Send a prompt email to a candidate.
+     * @param to The candidate's email address.
+     * @param firstName The candidate's first name.
+     */
+    void sendPromptEmail(String to, String firstName);
     
 }
